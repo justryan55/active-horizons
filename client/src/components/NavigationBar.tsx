@@ -1,5 +1,6 @@
 import styled from "styled-components";
 import { Link } from "react-router-dom";
+import { useEffect, useRef, useState } from "react";
 
 const Nav = styled.section`
   width: 100%;
@@ -40,7 +41,7 @@ const Button = styled.button`
   border: none;
   margin: 0px 40px;
 
-  --c: #229091;
+  --c: #fb5607;
 
   box-shadow: 0 0 0 0.1em inset var(--c);
   --_g: linear-gradient(var(--c) 0 0) no-repeat;
@@ -51,6 +52,7 @@ const Button = styled.button`
   background-size: 50.5% calc(var(--_p, 0%) / 2 + 0.5%);
   outline-offset: 0.1em;
   transition: background-size 0.4s, background-position 0s 0.4s;
+  border-radius: 10px;
 
   &:hover {
     --_p: 100%;
@@ -63,14 +65,111 @@ const Button = styled.button`
   }
 `;
 
+const MenuContainer = styled.div`
+  position: absolute;
+  top: 100%;
+  background-color: white;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  z-index: 1;
+  display: ${(props) => (props.isOpen ? "block" : "none")};
+`;
+
+const MenuItem = styled(Link)`
+  display: block;
+  padding: 0.75rem 1.5rem;
+  color: black;
+  text-decoration: none;
+
+  &:hover {
+    background-color: #f0f0f0;
+  }
+`;
+
 export const NavigationBar = () => {
+  const [isAboutOpen, setIsAboutOpen] = useState(false);
+  const [isProcessOpen, setIsProcessOpen] = useState(false);
+  const aboutMenuRef = useRef(null);
+  const processMenuRef = useRef(null);
+  const timeoutRef = useRef(null);
+
+  useEffect(() => {
+    return () => {
+      if (timeoutRef.current) {
+        clearTimeout(timeoutRef.current);
+      }
+    };
+  }, []);
+
+  const handleAboutMouseEnter = () => {
+    if (timeoutRef.current) {
+      clearTimeout(timeoutRef.current);
+    }
+    setIsProcessOpen(false);
+    setIsAboutOpen(true);
+  };
+
+  const handleAboutMouseLeave = () => {
+    timeoutRef.current = setTimeout(() => {
+      setIsAboutOpen(false);
+    }, 300);
+  };
+
+  const handleProcessMouseEnter = () => {
+    if (timeoutRef.current) {
+      clearTimeout(timeoutRef.current);
+    }
+    setIsAboutOpen(false);
+    setIsProcessOpen(true);
+  };
+
+  const handleProcessMouseLeave = () => {
+    timeoutRef.current = setTimeout(() => {
+      setIsProcessOpen(false);
+    }, 300);
+  };
+
   return (
     <Nav>
       <NavDiv>Active Horizons</NavDiv>
       <NavDiv>
-        <NavLink to="/about">About</NavLink>
+        <div>
+          <NavLink
+            to="/about"
+            onMouseEnter={handleAboutMouseEnter}
+            onMouseLeave={handleAboutMouseLeave}
+          >
+            About ▾
+          </NavLink>
+          <MenuContainer
+            isOpen={isAboutOpen}
+            ref={aboutMenuRef}
+            onMouseEnter={handleAboutMouseEnter}
+            onMouseLeave={handleAboutMouseLeave}
+          >
+            <MenuItem to="/story">Our Story</MenuItem>
+            <MenuItem to="/team">Our Team</MenuItem>
+            <MenuItem to="/mission">Mission</MenuItem>
+          </MenuContainer>
+        </div>
         <NavLink to="/pricing">Pricing</NavLink>
-        <NavLink to="/process">Process</NavLink>
+        <div>
+          <NavLink
+            to="/process"
+            onMouseEnter={handleProcessMouseEnter}
+            onMouseLeave={handleProcessMouseLeave}
+          >
+            Process ▾
+          </NavLink>
+          <MenuContainer
+            isOpen={isProcessOpen}
+            ref={processMenuRef}
+            onMouseEnter={handleProcessMouseEnter}
+            onMouseLeave={handleProcessMouseLeave}
+          >
+            <MenuItem to="/online-physiotherapy">Online Physiotherapy</MenuItem>
+            <MenuItem to="/ndis">NDIS</MenuItem>
+          </MenuContainer>
+        </div>
         <NavLink to="/blog">Blog</NavLink>
         <Button>Book Now</Button>
       </NavDiv>

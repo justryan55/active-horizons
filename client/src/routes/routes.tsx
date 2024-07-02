@@ -23,6 +23,26 @@ const Router = () => {
       path: "/blog",
       element: <App />,
     },
+    {
+      path: "/story",
+      element: <App />,
+    },
+    {
+      path: "/team",
+      element: <App />,
+    },
+    {
+      path: "/mission",
+      element: <App />,
+    },
+    {
+      path: "/online-physiotherapy",
+      element: <App />,
+    },
+    {
+      path: "/ndis",
+      element: <App />,
+    },
   ]);
 
   return router;
