@@ -1,6 +1,63 @@
 import styled from "styled-components";
 import { Link } from "react-router-dom";
 import { useEffect, useRef, useState } from "react";
+import { slide as BurgerMenu } from "react-burger-menu";
+
+const styles = {
+  bmBurgerButton: {
+    position: "fixed",
+    width: "36px",
+    height: "30px",
+    right: "36px",
+    top: "36px",
+  },
+
+  bmBurgerBars: {
+    background: "#373a47",
+  },
+
+  bmBurgerBarsHover: {
+    background: "#a90000",
+  },
+
+  bmCrossButton: {
+    height: "24px",
+    width: "24px",
+  },
+
+  bmCross: {
+    background: "black",
+  },
+
+  bmMenuWrap: {
+    position: "fixed",
+    height: "100%",
+  },
+
+  bmMenu: {
+    background: "#efefef",
+    padding: "2.5em 1.5em 0",
+    fontSize: "1.15em",
+  },
+
+  bmMorphShape: {
+    fill: "#373a47",
+  },
+
+  bmItemList: {
+    color: "black",
+    padding: "0.8em",
+  },
+
+  bmItem: {
+    display: "inline-block",
+    fontSize: "1.5rem",
+  },
+
+  bmOverlay: {
+    background: "rgba(0, 0, 0, 0.3)",
+  },
+};
 
 const Nav = styled.section`
   width: 100%;
@@ -65,6 +122,37 @@ const Button = styled.button`
   }
 `;
 
+const MobileButton = styled.button`
+  font-size: 1.5rem;
+  cursor: pointer;
+  padding: 0.5rem 1.5rem;
+  font-weight: bold;
+  border: none;
+  margin: 50px 40px;
+  --c: #fb5607;
+  border-radius: 10px;
+
+  box-shadow: 0 0 0 0.1em inset var(--c);
+  --_g: linear-gradient(var(--c) 0 0) no-repeat;
+  background: var(--_g) calc(var(--_p, 0%) - 100%) 0%,
+    var(--_g) calc(200% - var(--_p, 0%)) 0%,
+    var(--_g) calc(var(--_p, 0%) - 100%) 100%,
+    var(--_g) calc(200% - var(--_p, 0%)) 100%;
+  background-size: 50.5% calc(var(--_p, 0%) / 2 + 0.5%);
+  outline-offset: 0.1em;
+  transition: background-size 0.4s, background-position 0s 0.4s;
+
+  &:hover {
+    --_p: 100%;
+    transition: background-position 0.4s, background-size 0s;
+  }
+
+  &:active {
+    background-color: var(--c);
+    color: #fff;
+  }
+`;
+
 const MenuContainer = styled.div`
   position: absolute;
   top: 100%;
@@ -88,9 +176,26 @@ const MenuItem = styled(Link)`
 export const NavigationBar = () => {
   const [isAboutOpen, setIsAboutOpen] = useState(false);
   const [isProcessOpen, setIsProcessOpen] = useState(false);
+  const [showBurgerMenu, setShowBurgerMenu] = useState(false);
   const aboutMenuRef = useRef(null);
   const processMenuRef = useRef(null);
   const timeoutRef = useRef(null);
+
+  useEffect(() => {
+    const handleResize = () => {
+      if (window.innerWidth <= 1050) {
+        setShowBurgerMenu(true);
+      } else {
+        setShowBurgerMenu(false);
+      }
+    };
+
+    handleResize();
+
+    window.addEventListener("resize", handleResize);
+
+    return () => window.removeEventListener("resize", handleResize);
+  }, []);
 
   useEffect(() => {
     return () => {
@@ -129,51 +234,121 @@ export const NavigationBar = () => {
   };
 
   return (
-    <Nav>
-      <NavDiv>Active Horizons</NavDiv>
-      <NavDiv>
-        <div>
+    <>
+      {showBurgerMenu ? (
+        <BurgerMenu right styles={styles}>
+          <NavLink to="/" className="bm-item">
+            Active Horizons
+          </NavLink>
           <NavLink
-            to="/about"
             onMouseEnter={handleAboutMouseEnter}
             onMouseLeave={handleAboutMouseLeave}
+            className="bm-item"
+            to="/about"
           >
             About ▾
           </NavLink>
-          <MenuContainer
-            isOpen={isAboutOpen}
+          <div
             ref={aboutMenuRef}
             onMouseEnter={handleAboutMouseEnter}
             onMouseLeave={handleAboutMouseLeave}
           >
-            <MenuItem to="/story">Our Story</MenuItem>
-            <MenuItem to="/team">Our Team</MenuItem>
-            <MenuItem to="/mission">Mission</MenuItem>
-          </MenuContainer>
-        </div>
-        <NavLink to="/pricing">Pricing</NavLink>
-        <div>
+            {isAboutOpen && (
+              <div>
+                <MenuItem to="/story" className="bm-subitem">
+                  Our Story
+                </MenuItem>
+                <MenuItem to="/team" className="bm-subitem">
+                  Our Team
+                </MenuItem>
+                <MenuItem to="/mission" className="bm-subitem">
+                  Mission
+                </MenuItem>
+              </div>
+            )}
+          </div>
+          <NavLink className="bm-item" to="/pricing">
+            Pricing
+          </NavLink>
           <NavLink
-            to="/process"
             onMouseEnter={handleProcessMouseEnter}
             onMouseLeave={handleProcessMouseLeave}
+            className="bm-item"
+            to="/process"
           >
             Process ▾
           </NavLink>
-          <MenuContainer
-            isOpen={isProcessOpen}
+          <div
             ref={processMenuRef}
             onMouseEnter={handleProcessMouseEnter}
             onMouseLeave={handleProcessMouseLeave}
           >
-            <MenuItem to="/online-physiotherapy">Online Physiotherapy</MenuItem>
-            <MenuItem to="/ndis">NDIS</MenuItem>
-          </MenuContainer>
-        </div>
-        <NavLink to="/blog">Blog</NavLink>
-        <Button>Book Now</Button>
-      </NavDiv>
-    </Nav>
+            {isProcessOpen && (
+              <div>
+                <MenuItem to="/online-physiotherapy" className="bm-subitem">
+                  Online Physiotherapy
+                </MenuItem>
+                <MenuItem to="/ndis" className="bm-subitem">
+                  NDIS
+                </MenuItem>
+              </div>
+            )}
+          </div>
+          <NavLink className="bm-item" to="/blog">
+            Blog
+          </NavLink>
+          <MobileButton>Book Now</MobileButton>
+        </BurgerMenu>
+      ) : (
+        <Nav>
+          <NavDiv>Active Horizons</NavDiv>
+          <NavDiv>
+            <div>
+              <NavLink
+                to="/about"
+                onMouseEnter={handleAboutMouseEnter}
+                onMouseLeave={handleAboutMouseLeave}
+              >
+                About ▾
+              </NavLink>
+              <MenuContainer
+                isOpen={isAboutOpen}
+                ref={aboutMenuRef}
+                onMouseEnter={handleAboutMouseEnter}
+                onMouseLeave={handleAboutMouseLeave}
+              >
+                <MenuItem to="/story">Our Story</MenuItem>
+                <MenuItem to="/team">Our Team</MenuItem>
+                <MenuItem to="/mission">Mission</MenuItem>
+              </MenuContainer>
+            </div>
+            <NavLink to="/pricing">Pricing</NavLink>
+            <div>
+              <NavLink
+                to="/process"
+                onMouseEnter={handleProcessMouseEnter}
+                onMouseLeave={handleProcessMouseLeave}
+              >
+                Process ▾
+              </NavLink>
+              <MenuContainer
+                isOpen={isProcessOpen}
+                ref={processMenuRef}
+                onMouseEnter={handleProcessMouseEnter}
+                onMouseLeave={handleProcessMouseLeave}
+              >
+                <MenuItem to="/online-physiotherapy">
+                  Online Physiotherapy
+                </MenuItem>
+                <MenuItem to="/ndis">NDIS</MenuItem>
+              </MenuContainer>
+            </div>
+            <NavLink to="/blog">Blog</NavLink>
+            <Button>Book Now</Button>
+          </NavDiv>
+        </Nav>
+      )}
+    </>
   );
 };
 
