@@ -1,17 +1,27 @@
 import { Outlet } from "react-router";
 import NavigationBar from "./components/NavigationBar.tsx";
 import styled from "styled-components";
+import Footer from "./components/Footer.tsx";
 
-const Div = styled.div`
+const AppContainer = styled.div`
+  display: flex;
+  flex-direction: column;
   height: 200vh;
+`;
+
+const Content = styled.main`
+  flex: 1;
 `;
 
 export const App = () => {
   return (
-    <Div>
+    <AppContainer>
       <NavigationBar />
-      <Outlet />
-    </Div>
+      <Content>
+        <Outlet />
+      </Content>
+      <Footer />
+    </AppContainer>
   );
 };
 
