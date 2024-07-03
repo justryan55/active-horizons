@@ -314,7 +314,7 @@ export const NavigationBar = () => {
             )}
           </div>
           <NavLinkMobile to="/blog">Blog</NavLinkMobile>
-          <MobileButton>Book Now</MobileButton>
+          <MobileButton>Start Your Journey</MobileButton>
         </BurgerMenu>
       ) : (
         <Nav>
@@ -361,7 +361,7 @@ export const NavigationBar = () => {
               </MenuContainer>
             </div>
             <NavLink to="/blog">Blog</NavLink>
-            <Button>Book Now</Button>
+            <Button>Start Your Journey</Button>
           </NavDiv>
         </Nav>
       )}

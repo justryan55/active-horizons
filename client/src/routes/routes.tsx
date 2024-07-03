@@ -1,51 +1,102 @@
-import { createBrowserRouter } from "react-router-dom";
+import { Route, BrowserRouter as Router, Routes } from "react-router-dom";
 import App from "../App";
+import Story from "../pages/Story";
+import Pricing from "../pages/Pricing";
+import Blog from "../pages/Blog";
+import Team from "../pages/Team";
+import Mission from "../pages/Mission";
+import Physiotherapy from "../pages/Physiotherapy";
+import NDIS from "../pages/NDIS";
+import Layout from "../components/Layout";
+import Process from "../pages/Process";
 
-const Router = () => {
-  const router = createBrowserRouter([
-    {
-      path: "/",
-      element: <App />,
-    },
-    {
-      path: "/about",
-      element: <App />,
-    },
-    {
-      path: "/pricing",
-      element: <App />,
-    },
-    {
-      path: "/process",
-      element: <App />,
-    },
-    {
-      path: "/blog",
-      element: <App />,
-    },
-    {
-      path: "/story",
-      element: <App />,
-    },
-    {
-      path: "/team",
-      element: <App />,
-    },
-    {
-      path: "/mission",
-      element: <App />,
-    },
-    {
-      path: "/online-physiotherapy",
-      element: <App />,
-    },
-    {
-      path: "/ndis",
-      element: <App />,
-    },
-  ]);
-
-  return router;
+const AppRouter = () => {
+  return (
+    <Router>
+      <Routes>
+        <Route
+          path="/"
+          element={
+            <Layout>
+              <App />
+            </Layout>
+          }
+        />
+        <Route
+          path="/about"
+          element={
+            <Layout>
+              <App />
+            </Layout>
+          }
+        />
+        <Route
+          path="/pricing"
+          element={
+            <Layout>
+              <Pricing />
+            </Layout>
+          }
+        />
+        <Route
+          path="/process"
+          element={
+            <Layout>
+              <Process />
+            </Layout>
+          }
+        />
+        <Route
+          path="/blog"
+          element={
+            <Layout>
+              <Blog />
+            </Layout>
+          }
+        />
+        <Route
+          path="/story"
+          element={
+            <Layout>
+              <Story />
+            </Layout>
+          }
+        />
+        <Route
+          path="/team"
+          element={
+            <Layout>
+              <Team />
+            </Layout>
+          }
+        />
+        <Route
+          path="/mission"
+          element={
+            <Layout>
+              <Mission />
+            </Layout>
+          }
+        />
+        <Route
+          path="/online-physiotherapy"
+          element={
+            <Layout>
+              <Physiotherapy />
+            </Layout>
+          }
+        />
+        <Route
+          path="/ndis"
+          element={
+            <Layout>
+              <NDIS />
+            </Layout>
+          }
+        />
+      </Routes>
+    </Router>
+  );
 };
 
-export default Router;
+export default AppRouter;
