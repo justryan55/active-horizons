@@ -300,15 +300,13 @@ export const NavigationBar = () => {
             )}
           </div>
           <NavLinkMobile to="/pricing">Pricing</NavLinkMobile>
-          <NavLinkMobile onClick={handleProcessMouseClick} to="/process">
-            Process ▾
+          <NavLinkMobile onClick={handleProcessMouseClick} to="/physiotherapy">
+            Physiotherapy ▾
           </NavLinkMobile>
           <div>
             {isProcessOpen && (
               <div>
-                <SubMenuItem to="/online-physiotherapy">
-                  Online Physiotherapy
-                </SubMenuItem>
+                <SubMenuItem to="/how-it-works">How it works?</SubMenuItem>
                 <SubMenuItem to="/ndis">NDIS</SubMenuItem>
               </div>
             )}
@@ -342,11 +340,11 @@ export const NavigationBar = () => {
             <NavLink to="/pricing">Pricing</NavLink>
             <div>
               <NavLink
-                to="/process"
+                to="/physiotherapy"
                 onMouseEnter={handleProcessMouseEnter}
                 onMouseLeave={handleProcessMouseLeave}
               >
-                Process ▾
+                Physiotherapy ▾
               </NavLink>
               <MenuContainer
                 isOpen={isProcessOpen}
@@ -354,9 +352,7 @@ export const NavigationBar = () => {
                 onMouseEnter={handleProcessMouseEnter}
                 onMouseLeave={handleProcessMouseLeave}
               >
-                <MenuItem to="/online-physiotherapy">
-                  Online Physiotherapy
-                </MenuItem>
+                <MenuItem to="/how-it-works">How it works?</MenuItem>
                 <MenuItem to="/ndis">NDIS</MenuItem>
               </MenuContainer>
             </div>

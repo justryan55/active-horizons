@@ -8,7 +8,7 @@ import Mission from "../pages/Mission";
 import Physiotherapy from "../pages/Physiotherapy";
 import NDIS from "../pages/NDIS";
 import Layout from "../components/Layout";
-import Process from "../pages/Process";
+import HowItWorks from "../pages/HowItWorks";
 
 const AppRouter = () => {
   return (
@@ -35,14 +35,6 @@ const AppRouter = () => {
           element={
             <Layout>
               <Pricing />
-            </Layout>
-          }
-        />
-        <Route
-          path="/process"
-          element={
-            <Layout>
-              <Process />
             </Layout>
           }
         />
@@ -79,10 +71,18 @@ const AppRouter = () => {
           }
         />
         <Route
-          path="/online-physiotherapy"
+          path="/physiotherapy"
           element={
             <Layout>
               <Physiotherapy />
+            </Layout>
+          }
+        />
+        <Route
+          path="/how-it-works"
+          element={
+            <Layout>
+              <HowItWorks />
             </Layout>
           }
         />
