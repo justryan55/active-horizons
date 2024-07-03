@@ -116,7 +116,7 @@ const Button = styled.button`
   border: none;
   margin: 0px 40px;
 
-  --c: #fb5607;
+  --c: #90be6d;
 
   box-shadow: 0 0 0 0.1em inset var(--c);
   --_g: linear-gradient(var(--c) 0 0) no-repeat;
@@ -147,7 +147,7 @@ const MobileButton = styled.button`
   font-weight: bold;
   border: none;
   margin: 50px 40px;
-  --c: #fb5607;
+  --c: #90be6d;
   border-radius: 10px;
 
   box-shadow: 0 0 0 0.1em inset var(--c);
