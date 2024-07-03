@@ -105,7 +105,7 @@ const NavLinkLogo = styled(Link)`
   margin: 1.5rem 0;
   padding: 0.5rem 1.5rem;
   border-bottom: 1px black solid;
-  width: calc(100% - 3rem);
+  width: calc(100% - 2rem);
 `;
 
 const Button = styled.button`
