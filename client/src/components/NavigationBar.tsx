@@ -90,6 +90,24 @@ const NavLink = styled(Link)`
   }
 `;
 
+const NavLinkMobile = styled(Link)`
+  font-size: 1.25rem;
+  text-decoration: none;
+  color: inherit;
+  margin: 1.5rem 1.5rem;
+`;
+
+const NavLinkLogo = styled(Link)`
+  font-size: 1.25rem;
+  text-decoration: none;
+  color: inherit;
+  display: block;
+  margin: 1.5rem 0;
+  padding: 0.5rem 1.5rem;
+  border-bottom: 1px black solid;
+  width: calc(100% - 3rem);
+`;
+
 const Button = styled.button`
   font-size: 1.5rem;
   cursor: pointer;
@@ -173,6 +191,11 @@ const MenuItem = styled(Link)`
   }
 `;
 
+const SubMenuItem = styled(MenuItem)`
+  padding-left: 2rem;
+  color: black;
+`;
+
 export const NavigationBar = () => {
   const [isAboutOpen, setIsAboutOpen] = useState(false);
   const [isProcessOpen, setIsProcessOpen] = useState(false);
@@ -219,6 +242,19 @@ export const NavigationBar = () => {
     }, 300);
   };
 
+  const handleAboutMouseClick = () => {
+    if (timeoutRef.current) {
+      clearTimeout(timeoutRef.current);
+    }
+    setIsProcessOpen(false);
+
+    if (!isAboutOpen) {
+      setIsAboutOpen(true);
+    } else {
+      setIsAboutOpen(false);
+    }
+  };
+
   const handleProcessMouseEnter = () => {
     if (timeoutRef.current) {
       clearTimeout(timeoutRef.current);
@@ -233,70 +269,51 @@ export const NavigationBar = () => {
     }, 300);
   };
 
+  const handleProcessMouseClick = () => {
+    if (timeoutRef.current) {
+      clearTimeout(timeoutRef.current);
+    }
+    setIsAboutOpen(false);
+
+    if (!isProcessOpen) {
+      setIsProcessOpen(true);
+    } else {
+      setIsProcessOpen(false);
+    }
+  };
+
   return (
     <>
       {showBurgerMenu ? (
         <BurgerMenu right styles={styles}>
-          <NavLink to="/" className="bm-item">
-            Active Horizons
-          </NavLink>
-          <NavLink
-            onMouseEnter={handleAboutMouseEnter}
-            onMouseLeave={handleAboutMouseLeave}
-            className="bm-item"
-            to="/about"
-          >
+          <NavLinkLogo to="/">Active Horizons</NavLinkLogo>
+          <NavLinkMobile onClick={handleAboutMouseClick} to="/about">
             About ▾
-          </NavLink>
-          <div
-            ref={aboutMenuRef}
-            onMouseEnter={handleAboutMouseEnter}
-            onMouseLeave={handleAboutMouseLeave}
-          >
+          </NavLinkMobile>
+          <div>
             {isAboutOpen && (
               <div>
-                <MenuItem to="/story" className="bm-subitem">
-                  Our Story
-                </MenuItem>
-                <MenuItem to="/team" className="bm-subitem">
-                  Our Team
-                </MenuItem>
-                <MenuItem to="/mission" className="bm-subitem">
-                  Mission
-                </MenuItem>
+                <SubMenuItem to="/story">Our Story</SubMenuItem>
+                <SubMenuItem to="/team">Our Team</SubMenuItem>
+                <SubMenuItem to="/mission">Mission</SubMenuItem>
               </div>
             )}
           </div>
-          <NavLink className="bm-item" to="/pricing">
-            Pricing
-          </NavLink>
-          <NavLink
-            onMouseEnter={handleProcessMouseEnter}
-            onMouseLeave={handleProcessMouseLeave}
-            className="bm-item"
-            to="/process"
-          >
+          <NavLinkMobile to="/pricing">Pricing</NavLinkMobile>
+          <NavLinkMobile onClick={handleProcessMouseClick} to="/process">
             Process ▾
-          </NavLink>
-          <div
-            ref={processMenuRef}
-            onMouseEnter={handleProcessMouseEnter}
-            onMouseLeave={handleProcessMouseLeave}
-          >
+          </NavLinkMobile>
+          <div>
             {isProcessOpen && (
               <div>
-                <MenuItem to="/online-physiotherapy" className="bm-subitem">
+                <SubMenuItem to="/online-physiotherapy">
                   Online Physiotherapy
-                </MenuItem>
-                <MenuItem to="/ndis" className="bm-subitem">
-                  NDIS
-                </MenuItem>
+                </SubMenuItem>
+                <SubMenuItem to="/ndis">NDIS</SubMenuItem>
               </div>
             )}
           </div>
-          <NavLink className="bm-item" to="/blog">
-            Blog
-          </NavLink>
+          <NavLinkMobile to="/blog">Blog</NavLinkMobile>
           <MobileButton>Book Now</MobileButton>
         </BurgerMenu>
       ) : (
