@@ -3,7 +3,7 @@ import InfoIcon from "../components/InfoIcon";
 
 const DivIcons = styled.div`
   display: grid;
-  grid-template-columns: repeat(3, 1fr);
+  grid-template-columns: repeat(4, 1fr);
   justify-content: center;
   align-items: center;
   column-gap: 20px;
@@ -17,10 +17,13 @@ const DivIcons = styled.div`
 const DivFlex = styled.div`
   display: flex;
   justify-content: center;
-  height: 100vh;
+  height: 100%;
+  min-height: 100vh;
 `;
+
 const DivWhite = styled.div`
-  height: 100vh;
+  height: 100%;
+  min-height: 100vh;
   background-color: #efefef;
   display: flex;
   flex-direction: column;
@@ -29,7 +32,8 @@ const DivWhite = styled.div`
 `;
 
 const DivBlue = styled.div`
-  height: 100vh;
+  height: 100%;
+  min-height: 100vh;
   background-color: #81bbc5;
 
   display: flex;

@@ -72,7 +72,7 @@ const Nav = styled.section`
   justify-content: space-between;
   align-items: center;
 
-  z-index: 1000;
+  z-index: 5000;
 `;
 
 const NavDiv = styled.div`

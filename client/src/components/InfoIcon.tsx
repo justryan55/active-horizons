@@ -19,7 +19,6 @@ const Div = styled.div`
   width: 200px;
   height: 200px;
   border-radius: 10px;
-  gap: 20px;
   background-color: white;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.075);
   padding: 10px;
@@ -72,7 +71,7 @@ const ModalOverlay = styled.div`
 
 const Modal = styled.div`
   background-color: white;
-  padding: 20px;
+  padding: 50px;
   border-radius: 10px;
   max-width: 30%;
   max-height: 80%;
@@ -84,6 +83,7 @@ const Modal = styled.div`
   flex-direction: column;
   justify-content: center;
   align-items: center;
+  text-align: center;
   animation: ${fadeIn} 0.2s ease;
 
   img {
