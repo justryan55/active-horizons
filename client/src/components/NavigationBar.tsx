@@ -2,6 +2,7 @@ import styled from "styled-components";
 import { Link } from "react-router-dom";
 import { useEffect, useRef, useState } from "react";
 import { slide as BurgerMenu } from "react-burger-menu";
+import { Link as ScrollLink } from "react-scroll";
 
 const styles = {
   bmBurgerButton: {
@@ -70,6 +71,8 @@ const Nav = styled.section`
   display: flex;
   justify-content: space-between;
   align-items: center;
+
+  z-index: 1000;
 `;
 
 const NavDiv = styled.div`
@@ -293,9 +296,42 @@ export const NavigationBar = () => {
           <div>
             {isAboutOpen && (
               <div>
-                <SubMenuItem to="/story">Our Story</SubMenuItem>
-                <SubMenuItem to="/team">Our Team</SubMenuItem>
-                <SubMenuItem to="/mission">Our Mission</SubMenuItem>
+                <ScrollLink
+                  to="story"
+                  smooth={true}
+                  duration={500}
+                  spy={true}
+                  hashSpy={true}
+                >
+                  <SubMenuItem>Our Story</SubMenuItem>
+                </ScrollLink>
+                <ScrollLink
+                  to="team"
+                  smooth={true}
+                  duration={500}
+                  spy={true}
+                  hashSpy={true}
+                >
+                  <SubMenuItem>Our Team</SubMenuItem>
+                </ScrollLink>
+                <ScrollLink
+                  to="values"
+                  smooth={true}
+                  duration={500}
+                  spy={true}
+                  hashSpy={true}
+                >
+                  <SubMenuItem>Our Values</SubMenuItem>
+                </ScrollLink>
+                <ScrollLink
+                  to="mission"
+                  smooth={true}
+                  duration={500}
+                  spy={true}
+                  hashSpy={true}
+                >
+                  <SubMenuItem>Our Mission</SubMenuItem>
+                </ScrollLink>{" "}
               </div>
             )}
           </div>
@@ -306,12 +342,28 @@ export const NavigationBar = () => {
           <div>
             {isProcessOpen && (
               <div>
-                <SubMenuItem to="/how-it-works">How it works?</SubMenuItem>
-                <SubMenuItem to="/ndis">NDIS</SubMenuItem>
+                <ScrollLink
+                  to="benefits"
+                  smooth={true}
+                  duration={500}
+                  spy={true}
+                  hashSpy={true}
+                >
+                  <SubMenuItem>Benefits</SubMenuItem>
+                </ScrollLink>
+                <ScrollLink
+                  to="process"
+                  smooth={true}
+                  duration={500}
+                  spy={true}
+                  hashSpy={true}
+                >
+                  <SubMenuItem>Process</SubMenuItem>
+                </ScrollLink>
               </div>
             )}
           </div>
-          <NavLinkMobile to="/blog">Blog</NavLinkMobile>
+          {/* <NavLinkMobile to="/blog">Blog</NavLinkMobile> */}
           <MobileButton>Start Your Journey</MobileButton>
         </BurgerMenu>
       ) : (
@@ -332,9 +384,46 @@ export const NavigationBar = () => {
                 onMouseEnter={handleAboutMouseEnter}
                 onMouseLeave={handleAboutMouseLeave}
               >
-                <MenuItem to="/story">Our Story</MenuItem>
-                <MenuItem to="/team">Our Team</MenuItem>
-                <MenuItem to="/mission">Our Mission</MenuItem>
+                <ScrollLink
+                  to="story"
+                  smooth={true}
+                  duration={500}
+                  offset={-95}
+                  spy={true}
+                  hashSpy={true}
+                >
+                  <MenuItem>Our Story</MenuItem>
+                </ScrollLink>
+                <ScrollLink
+                  to="team"
+                  smooth={true}
+                  duration={500}
+                  offset={-95}
+                  spy={true}
+                  hashSpy={true}
+                >
+                  <MenuItem>Our Team</MenuItem>
+                </ScrollLink>
+                <ScrollLink
+                  to="values"
+                  smooth={true}
+                  duration={500}
+                  offset={-95}
+                  spy={true}
+                  hashSpy={true}
+                >
+                  <MenuItem>Our Values</MenuItem>
+                </ScrollLink>
+                <ScrollLink
+                  to="mission"
+                  smooth={true}
+                  duration={500}
+                  offset={-95}
+                  spy={true}
+                  hashSpy={true}
+                >
+                  <MenuItem>Our Mission</MenuItem>
+                </ScrollLink>
               </MenuContainer>
             </div>
             <NavLink to="/pricing">Pricing</NavLink>
@@ -356,7 +445,7 @@ export const NavigationBar = () => {
                 <MenuItem to="/ndis">NDIS</MenuItem>
               </MenuContainer>
             </div>
-            <NavLink to="/blog">Blog</NavLink>
+            {/* <NavLink to="/blog">Blog</NavLink> */}
             <Button>Start Your Journey</Button>
           </NavDiv>
         </Nav>

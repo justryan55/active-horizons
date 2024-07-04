@@ -7,14 +7,14 @@ const DivGreen = styled.div`
 
 const DivWhite = styled.div`
   height: 100vh;
-  background-color: white;
+  background-color: #efefef;
 `;
 
 export default function About() {
   return (
     <>
       <DivGreen>
-        <div>Our Story</div>
+        <div id="story">Our Story</div>
         <p>
           Active Horizons Health Group was established in 2024 with a mission to
           revolutionise access to high-quality physiotherapy care. Recognising
@@ -26,7 +26,7 @@ export default function About() {
         </p>
       </DivGreen>
       <DivWhite>
-        <div id="our-team">Our Team</div>
+        <div id="team">Our Team</div>
         <p>Ryan Irani</p>
         <p>Principal Physiotherapist and Director</p>
         <p>
@@ -53,19 +53,19 @@ export default function About() {
         </p>
         <p>
           Outside of physiotherapy, I love to keep active by gymming and going
-          for runs, which help me stay fit and energized. I have a passion for
-          travel, always eager to explore new places, experience different
-          cultures, and broaden my horizons. I believe in lifelong learning and
-          continuously seek opportunities to expand my professional skills and
-          knowledge. Additionally, I cherish spending quality time with friends,
-          enjoying everything from relaxed get-togethers to exciting adventures.
+          for runs. I have a passion for travel, always eager to explore new
+          places, experience different cultures, and broaden my horizons. I
+          believe in lifelong learning and continuously seek opportunities to
+          expand my professional skills and knowledge. Additionally, I cherish
+          spending quality time with friends, enjoying everything from relaxed
+          get-togethers to exciting adventures.
         </p>
       </DivWhite>
       <DivGreen>
-        <div>Our Values</div>
+        <div id="values">Our Values</div>
       </DivGreen>
       <DivWhite>
-        <div>Our Mission</div>
+        <div id="mission">Our Mission</div>
       </DivWhite>
     </>
   );
