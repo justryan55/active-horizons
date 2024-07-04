@@ -300,20 +300,22 @@ export const NavigationBar = () => {
                   to="story"
                   smooth={true}
                   duration={500}
+                  offset={-200}
                   spy={true}
                   hashSpy={true}
                 >
                   <SubMenuItem>Our Story</SubMenuItem>
                 </ScrollLink>
                 <ScrollLink
-                  to="team"
+                  to="mission"
                   smooth={true}
                   duration={500}
                   spy={true}
                   hashSpy={true}
+                  offset={-200}
                 >
-                  <SubMenuItem>Our Team</SubMenuItem>
-                </ScrollLink>
+                  <SubMenuItem>Our Mission</SubMenuItem>
+                </ScrollLink>{" "}
                 <ScrollLink
                   to="values"
                   smooth={true}
@@ -324,14 +326,15 @@ export const NavigationBar = () => {
                   <SubMenuItem>Our Values</SubMenuItem>
                 </ScrollLink>
                 <ScrollLink
-                  to="mission"
+                  to="team"
                   smooth={true}
                   duration={500}
                   spy={true}
                   hashSpy={true}
+                  offset={-50}
                 >
-                  <SubMenuItem>Our Mission</SubMenuItem>
-                </ScrollLink>{" "}
+                  <SubMenuItem>Our Team</SubMenuItem>
+                </ScrollLink>
               </div>
             )}
           </div>
@@ -388,41 +391,41 @@ export const NavigationBar = () => {
                   to="story"
                   smooth={true}
                   duration={500}
-                  offset={-95}
+                  offset={-300}
                   spy={true}
                   hashSpy={true}
                 >
                   <MenuItem>Our Story</MenuItem>
                 </ScrollLink>
                 <ScrollLink
-                  to="team"
+                  to="mission"
                   smooth={true}
                   duration={500}
-                  offset={-95}
+                  offset={-300}
                   spy={true}
                   hashSpy={true}
                 >
-                  <MenuItem>Our Team</MenuItem>
+                  <MenuItem>Our Mission</MenuItem>
                 </ScrollLink>
                 <ScrollLink
                   to="values"
                   smooth={true}
                   duration={500}
-                  offset={-95}
+                  offset={-150}
                   spy={true}
                   hashSpy={true}
                 >
                   <MenuItem>Our Values</MenuItem>
                 </ScrollLink>
                 <ScrollLink
-                  to="mission"
+                  to="team"
                   smooth={true}
                   duration={500}
-                  offset={-95}
+                  offset={-135}
                   spy={true}
                   hashSpy={true}
                 >
-                  <MenuItem>Our Mission</MenuItem>
+                  <MenuItem>Our Team</MenuItem>
                 </ScrollLink>
               </MenuContainer>
             </div>
@@ -441,8 +444,26 @@ export const NavigationBar = () => {
                 onMouseEnter={handleProcessMouseEnter}
                 onMouseLeave={handleProcessMouseLeave}
               >
-                <MenuItem to="/how-it-works">How it works?</MenuItem>
-                <MenuItem to="/ndis">NDIS</MenuItem>
+                <ScrollLink
+                  to="benefits"
+                  smooth={true}
+                  duration={500}
+                  offset={-150}
+                  spy={true}
+                  hashSpy={true}
+                >
+                  <SubMenuItem>Benefits</SubMenuItem>
+                </ScrollLink>
+                <ScrollLink
+                  to="process"
+                  smooth={true}
+                  duration={500}
+                  offset={-95}
+                  spy={true}
+                  hashSpy={true}
+                >
+                  <SubMenuItem>Process</SubMenuItem>
+                </ScrollLink>
               </MenuContainer>
             </div>
             {/* <NavLink to="/blog">Blog</NavLink> */}

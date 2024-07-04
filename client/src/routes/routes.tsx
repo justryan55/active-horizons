@@ -1,14 +1,9 @@
 import { Route, BrowserRouter as Router, Routes } from "react-router-dom";
 import App from "../App";
-import Story from "../pages/Story";
 import Pricing from "../pages/Pricing";
 import Blog from "../pages/Blog";
-import Team from "../pages/Team";
-import Mission from "../pages/Mission";
 import Physiotherapy from "../pages/Physiotherapy";
-import NDIS from "../pages/NDIS";
 import Layout from "../components/Layout";
-import HowItWorks from "../pages/HowItWorks";
 import About from "../pages/About";
 
 const AppRouter = () => {
@@ -47,51 +42,12 @@ const AppRouter = () => {
             </Layout>
           }
         />
-        <Route
-          path="/story"
-          element={
-            <Layout>
-              <Story />
-            </Layout>
-          }
-        />
-        <Route
-          path="/team"
-          element={
-            <Layout>
-              <Team />
-            </Layout>
-          }
-        />
-        <Route
-          path="/mission"
-          element={
-            <Layout>
-              <Mission />
-            </Layout>
-          }
-        />
+
         <Route
           path="/physiotherapy"
           element={
             <Layout>
               <Physiotherapy />
-            </Layout>
-          }
-        />
-        <Route
-          path="/how-it-works"
-          element={
-            <Layout>
-              <HowItWorks />
-            </Layout>
-          }
-        />
-        <Route
-          path="/ndis"
-          element={
-            <Layout>
-              <NDIS />
             </Layout>
           }
         />

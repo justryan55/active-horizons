@@ -2,6 +2,15 @@ import styled, { keyframes } from "styled-components";
 
 import { useEffect, useState } from "react";
 
+const shakeAnimation = keyframes`
+  0% { transform: rotate(0deg); }
+  20% { transform: rotate(-5deg); }
+  40% { transform: rotate(5deg); }
+  60% { transform: rotate(-5deg); }
+  80% { transform: rotate(5deg); }
+  100% { transform: rotate(0deg); }
+`;
+
 const Div = styled.div`
   display: flex;
   flex-direction: column;
@@ -9,18 +18,27 @@ const Div = styled.div`
   align-items: center;
   width: 200px;
   height: 200px;
-  border: 1px black solid;
   border-radius: 10px;
   gap: 20px;
+  background-color: white;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.075);
+  padding: 10px;
+  transition: transform 0.3s ease, background-color 0.3s ease;
 
   &:hover {
     cursor: pointer;
     transform: scale(1.1);
     transition: transform 0.3s ease;
+    background-color: #f0f0f0;
   }
 
   img {
     height: 50px;
+  }
+
+  img:hover {
+    animation: ${shakeAnimation} 0.5s ease;
+    animation-iteration-count: 1;
   }
 
   p {
@@ -70,6 +88,8 @@ const Modal = styled.div`
 
   img {
     height: 75px;
+  }
+
   }
 `;
 

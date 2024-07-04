@@ -3,32 +3,46 @@ import InfoIcon from "../components/InfoIcon";
 
 const DivIcons = styled.div`
   display: grid;
-  grid-template-columns: repeat(4, 1fr);
+  grid-template-columns: repeat(3, 1fr);
   justify-content: center;
   align-items: center;
   column-gap: 20px;
-  height: 100vh;
+
+  h1 {
+    font-size: 2.5rem;
+    margin-bottom: 20px;
+  }
 `;
 
 const DivFlex = styled.div`
   display: flex;
   justify-content: center;
-`;
-const DivGreen = styled.div`
   height: 100vh;
-  background-color: #90be6d;
 `;
-
 const DivWhite = styled.div`
   height: 100vh;
   background-color: #efefef;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding-top: 50px;
+`;
+
+const DivBlue = styled.div`
+  height: 100vh;
+  background-color: #81bbc5;
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding-top: 50px;
 `;
 
 export default function Physiotherapy() {
   return (
     <>
-      <DivGreen>
-        <p id="benefits">The benefits of online physiotherapy?</p>
+      <DivWhite>
+        <h1 id="benefits">The Benefits of Online Physiotherapy?</h1>
         <DivFlex>
           <DivIcons>
             <InfoIcon
@@ -131,10 +145,10 @@ export default function Physiotherapy() {
           /> */}
           </DivIcons>
         </DivFlex>
-      </DivGreen>
+      </DivWhite>
 
-      <DivWhite>
-        <p id="process">The process </p>
+      <DivBlue>
+        <h1 id="process">The Process</h1>
         <p>Book an appointment and complete the intake forms</p>
         <p>
           Intake session: Goals and frequency of appointments discussed and
@@ -143,7 +157,7 @@ export default function Physiotherapy() {
         <p>Initial assessment</p>
         <p>Therapy</p>
         <p>Regular monitoring to ensure making progress towards goals</p>
-      </DivWhite>
+      </DivBlue>
       {/* <DivGreen>
         <p></p>
       </DivGreen>
