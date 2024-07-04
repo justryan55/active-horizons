@@ -9,6 +9,7 @@ import Physiotherapy from "../pages/Physiotherapy";
 import NDIS from "../pages/NDIS";
 import Layout from "../components/Layout";
 import HowItWorks from "../pages/HowItWorks";
+import About from "../pages/About";
 
 const AppRouter = () => {
   return (
@@ -26,7 +27,7 @@ const AppRouter = () => {
           path="/about"
           element={
             <Layout>
-              <App />
+              <About />
             </Layout>
           }
         />

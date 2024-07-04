@@ -295,7 +295,7 @@ export const NavigationBar = () => {
               <div>
                 <SubMenuItem to="/story">Our Story</SubMenuItem>
                 <SubMenuItem to="/team">Our Team</SubMenuItem>
-                <SubMenuItem to="/mission">Mission</SubMenuItem>
+                <SubMenuItem to="/mission">Our Mission</SubMenuItem>
               </div>
             )}
           </div>
@@ -334,7 +334,7 @@ export const NavigationBar = () => {
               >
                 <MenuItem to="/story">Our Story</MenuItem>
                 <MenuItem to="/team">Our Team</MenuItem>
-                <MenuItem to="/mission">Mission</MenuItem>
+                <MenuItem to="/mission">Our Mission</MenuItem>
               </MenuContainer>
             </div>
             <NavLink to="/pricing">Pricing</NavLink>
