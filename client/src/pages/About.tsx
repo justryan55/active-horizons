@@ -5,10 +5,10 @@ const DivStory = styled.div`
   height: 100%;
   min-height: 100vh;
   background-color: #efefef;
-  padding: 40px 20px;
+  /* padding: 40px 20px; */
   display: flex;
   flex-direction: column;
-  align-items: center;
+  align-items: flex-start;
   justify-content: center;
   text-align: center;
 
@@ -56,11 +56,54 @@ const DivStory = styled.div`
   }
 `;
 
+const DivMission = styled.div`
+  height: 100%;
+  min-height: 100vh;
+  /* background: url("/images/heartbeat.svg") center/cover no-repeat,
+    rgba(129, 187, 197, 1);
+  background-size: 125%; */
+  background-color: rgb(129, 187, 197, 1);
+
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  justify-content: center;
+  text-align: center;
+
+  h1 {
+    font-size: 2.5rem;
+    margin-bottom: 20px;
+    z-index: 1500;
+  }
+  p {
+    max-width: 90%;
+    font-size: 1.4rem;
+    line-height: 1.6;
+    /* margin-bottom: 15rem; */
+    z-index: 1000;
+  }
+`;
+
+const DivStoryContainer = styled.div`
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  background-color: white;
+  /* box-shadow: 0 4px 8px rgba(0, 0, 0, 0.4); */
+  /* padding: 20px 0px; */
+
+  width: 50%;
+  z-index: 1000;
+  min-height: 100vh;
+  height: 100%;
+`;
+
 const DivValues = styled.div`
   height: 100%;
   min-height: 100vh;
   background-color: #efefef;
-  padding: 250px 20px;
+  padding: 50px 20px;
 
   display: flex;
   flex-direction: column;
@@ -86,33 +129,19 @@ const DivValues = styled.div`
   background-size: 130%; */
 `;
 
-const DivMission = styled.div`
-  height: 100%;
-  min-height: 100vh;
-  /* background: url("/images/heartbeat.svg") center/cover no-repeat,
-    rgba(129, 187, 197, 1);
-  background-size: 125%; */
-  background-color: rgb(129, 187, 197, 1);
-  padding: 40px 20px;
-
+const DivMissionContainer = styled.div`
   display: flex;
   flex-direction: column;
-  align-items: center;
   justify-content: center;
-  text-align: center;
+  align-items: center;
+  background-color: white;
+  /* box-shadow: 0 4px 8px rgba(0, 0, 0, 0.4); */
+  /* padding: 20px 0px; */
 
-  h1 {
-    font-size: 2.5rem;
-    margin-bottom: 20px;
-    z-index: 1500;
-  }
-  p {
-    max-width: 90%;
-    font-size: 1.4rem;
-    line-height: 1.6;
-    /* margin-bottom: 15rem; */
-    z-index: 1000;
-  }
+  width: 50%;
+  z-index: 1000;
+  min-height: 100vh;
+  height: 100%;
 `;
 
 const DivBackground = styled.div`
@@ -127,22 +156,6 @@ const DivBackground = styled.div`
   width: 50%;
   z-index: 1000;
   border-radius: 50px;
-`;
-
-const DivBackgroundMargin = styled.div`
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  background-color: white;
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.4);
-  padding: 20px 0px;
-
-  width: 50%;
-  z-index: 1000;
-  border-radius: 50px;
-
-  margin-bottom: 15rem;
 `;
 
 const DivTeam = styled.div`
@@ -215,7 +228,7 @@ export default function About() {
   return (
     <>
       <DivStory>
-        <DivBackgroundMargin>
+        <DivStoryContainer>
           <h1 id="story">Our Story</h1>
 
           <p className="story-description">
@@ -227,11 +240,11 @@ export default function About() {
             minimise the time and cost of travel, ensuring that everyone can
             receive the physiotherapy care they need, wherever they are.
           </p>
-        </DivBackgroundMargin>
+        </DivStoryContainer>
         {/* <BackgroundImage src="images/vital.svg" /> */}
       </DivStory>
       <DivMission>
-        <DivBackground>
+        <DivMissionContainer>
           {/* {/* <ImageOne src="images/hero-image-1.jpeg"></ImageOne>
           <ImageTwo src="images/hero-image-2.jpeg"></ImageTwo> */}
 
@@ -243,7 +256,7 @@ export default function About() {
             distance, lengthy wait times, and mobility challenges through the
             use of telehealth solutions.
           </p>
-        </DivBackground>
+        </DivMissionContainer>
         {/* <BackgroundImage src="images/vital.svg" /> */}
       </DivMission>
 
