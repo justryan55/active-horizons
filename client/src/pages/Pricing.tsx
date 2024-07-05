@@ -51,14 +51,15 @@ const DivBackground = styled.div`
 const IconWrapper = styled.div`
   font-size: 2rem;
   margin-bottom: 10px;
-  color: #90be6d;
+  color: #4caf50;
 `;
 
 const CTAButton = styled.button`
-  padding: 10px 20px;
-  font-size: 1rem;
+  font-size: 1.2rem;
+  font-weight: 600;
+  padding: 1rem 2.5rem;
   color: #fff;
-  background-color: #90be6d;
+  background-color: #4caf50;
   border: none;
   border-radius: 5px;
   cursor: pointer;
@@ -66,7 +67,7 @@ const CTAButton = styled.button`
   transition: background-color 0.3s;
 
   &:hover {
-    background-color: #0056b3;
+    background-color: #2e7d32;
   }
 `;
 

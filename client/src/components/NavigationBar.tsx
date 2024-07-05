@@ -125,43 +125,23 @@ const Button = styled.button`
   text-transform: uppercase;
   box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
   transition: background-color 0.3s, transform 0.2s;
-  margin-left: 0px;
-
-  &:before {
-    content: "";
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    width: 300%;
-    height: 300%;
-    background-color: rgba(255, 255, 255, 0.1);
-    transition: width 0.3s ease-out, height 0.3s ease-out, background-color 0.3s;
-    border-radius: 50%;
-    z-index: 0;
-    transform: translate(-50%, -50%);
-  }
+  margin-left: 20px;
 
   &:hover {
     background-color: #2e7d32;
     transform: translateY(-2px);
   }
 
-  &:hover:before {
-    width: 0;
-    height: 0;
-    background-color: transparent;
-  }
-
-  &:focus {
-    outline: none;
-    box-shadow: 0 0 0 3px rgba(0, 123, 255, 0.5);
+  &:active {
+    transform: translateY(2px);
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
   }
 `;
 
 const MobileButton = styled.button`
   font-size: 1.2rem;
   font-weight: 600;
-  padding: 1rem 1rem;
+  padding: 1rem 2.5rem;
   border: none;
   border-radius: 8px;
   cursor: pointer;
@@ -172,37 +152,16 @@ const MobileButton = styled.button`
   text-transform: uppercase;
   box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
   transition: background-color 0.3s, transform 0.2s;
-  margin-left: 0px;
-  margin-top: 50px;
-
-  &:before {
-    content: "";
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    width: 300%;
-    height: 300%;
-    background-color: rgba(255, 255, 255, 0.1);
-    transition: width 0.3s ease-out, height 0.3s ease-out, background-color 0.3s;
-    border-radius: 50%;
-    z-index: 0;
-    transform: translate(-50%, -50%);
-  }
+  margin-left: 20px;
 
   &:hover {
     background-color: #2e7d32;
     transform: translateY(-2px);
   }
 
-  &:hover:before {
-    width: 0;
-    height: 0;
-    background-color: transparent;
-  }
-
-  &:focus {
-    outline: none;
-    box-shadow: 0 0 0 3px rgba(0, 123, 255, 0.5);
+  &:active {
+    transform: translateY(2px);
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
   }
 `;
 
@@ -399,7 +358,7 @@ export const NavigationBar = () => {
             )}
           </div>
           {/* <NavLinkMobile to="/blog">Blog</NavLinkMobile> */}
-          <MobileButton>Start Your Journey</MobileButton>
+          <MobileButton>Start today</MobileButton>
         </BurgerMenu>
       ) : (
         <Nav>
@@ -501,7 +460,7 @@ export const NavigationBar = () => {
               </MenuContainer>
             </div>
             {/* <NavLink to="/blog">Blog</NavLink> */}
-            <Button>Start Your Journey</Button>
+            <Button>Start today</Button>
           </NavDiv>
         </Nav>
       )}

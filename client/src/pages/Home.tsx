@@ -7,16 +7,50 @@ const DivContainer = styled.div`
   align-items: center;
   height: 80vh;
 `;
+
 const Header = styled.h1`
   font-size: 3rem;
   color: #333;
   margin-bottom: 20px;
+  z-index: 100;
 `;
 
 const Text = styled.h3`
   font-size: 1.5rem;
   color: #555;
   text-align: center;
+  z-index: 100;
+`;
+
+const Button = styled.button`
+  font-size: 1.2rem;
+  font-weight: 600;
+  padding: 1rem 2.5rem;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  position: relative;
+  overflow: hidden;
+  background-color: #4caf50;
+  color: #fff;
+  text-transform: uppercase;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  transition: background-color 0.3s, transform 0.2s;
+  margin-left: 20px;
+
+  &:hover {
+    background-color: #2e7d32;
+    transform: translateY(-2px);
+  }
+
+  &:active {
+    transform: translateY(2px);
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+  }
+`;
+
+const ButtonDiv = styled.div`
+  display: flex;
 `;
 
 export default function Home() {
@@ -24,8 +58,10 @@ export default function Home() {
     <DivContainer>
       <Header>Active Horizons Health Group</Header>
       <Text>A Step Towards Independence: Any Time, Anywhere.</Text>
-      <p>Learn More</p>
-      <p>Start Your Journey</p>
+      <ButtonDiv>
+        <Button>Learn More</Button>
+        <Button>Start Today</Button>
+      </ButtonDiv>
     </DivContainer>
   );
 }

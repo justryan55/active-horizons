@@ -6,12 +6,25 @@ const DivStory = styled.div`
   min-height: 100vh;
   background-color: #efefef;
   padding: 40px 20px;
-
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
   text-align: center;
+
+  /* background: url("/images/hero-image.jpeg") center/contain repeat, #efefef;
+
+  ::before {
+    content: "";
+    position: absolute;
+    top: 0px;
+    left: 0;
+    width: 100%;
+    min-height: 115vh;
+    height: 100%;
+    background-color: rgba(239, 239, 239, 0.075);
+    z-index: -1;
+  } */
 
   h1 {
     font-size: 2.5rem;
@@ -69,6 +82,8 @@ const DivValues = styled.div`
     margin: 0 auto 20px;
     z-index: 1000;
   }
+  /* background: url("/images/heartbeat.svg") center/cover no-repeat, #efefef;
+  background-size: 130%; */
 `;
 
 const DivMission = styled.div`
@@ -119,7 +134,7 @@ const DivBackgroundMargin = styled.div`
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  background-color: rgb(255, 255, 255, 1);
+  background-color: white;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.4);
   padding: 20px 0px;
 
@@ -196,10 +211,46 @@ const BackgroundImage = styled.img`
   opacity: 100%;
 `;
 
+const ImageOne = styled.img`
+  height: 33%;
+  position: absolute;
+  left: 0%;
+  bottom: 10px;
+  z-index: -1000;
+`;
+
+const ImageTwo = styled.img`
+  height: 33%;
+
+  position: absolute;
+  left: 25%;
+  bottom: 10px;
+  z-index: -1000;
+`;
+
+const ImageThree = styled.img`
+  height: 100%;
+
+  position: absolute;
+  left: 0;
+  z-index: 0;
+`;
+
+const ImageFour = styled.img`
+  height: 100%;
+
+  position: absolute;
+  right: 0;
+  z-index: 0;
+`;
+
 export default function About() {
   return (
     <>
       <DivStory>
+        {/* <ImageThree src="images/hero-image-3.jpeg"></ImageThree>
+        <ImageFour src="images/hero-image-4.jpeg"></ImageFour> */}
+
         <DivBackgroundMargin>
           <h1 id="story">Our Story</h1>
           <p className="story-description">
@@ -216,6 +267,9 @@ export default function About() {
       </DivStory>
       <DivMission>
         <DivBackground>
+          {/* {/* <ImageOne src="images/hero-image-1.jpeg"></ImageOne>
+          <ImageTwo src="images/hero-image-2.jpeg"></ImageTwo> */}
+
           <h1 id="mission">Our Mission</h1>
           <p>
             Our mission at Active Horizons Health Group is to deliver
