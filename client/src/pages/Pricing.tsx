@@ -93,8 +93,8 @@ export default function Pricing() {
         <PricingContent>
           We bill for the time directly spent with the client and for the
           indirect time spent on tasks such as note taking, creating materials,
-          writing reports, and communicating with key workers, teachers, and
-          others involved.
+          writing reports, and communicating with key workers, and others
+          involved.
         </PricingContent>
         <IconWrapper>
           <IoDocumentTextSharp />

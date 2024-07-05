@@ -211,48 +211,13 @@ const BackgroundImage = styled.img`
   opacity: 100%;
 `;
 
-const ImageOne = styled.img`
-  height: 33%;
-  position: absolute;
-  left: 0%;
-  bottom: 10px;
-  z-index: -1000;
-`;
-
-const ImageTwo = styled.img`
-  height: 33%;
-
-  position: absolute;
-  left: 25%;
-  bottom: 10px;
-  z-index: -1000;
-`;
-
-const ImageThree = styled.img`
-  height: 100%;
-
-  position: absolute;
-  left: 0;
-  z-index: 0;
-`;
-
-const ImageFour = styled.img`
-  height: 100%;
-
-  position: absolute;
-  right: 0;
-  z-index: 0;
-`;
-
 export default function About() {
   return (
     <>
       <DivStory>
-        {/* <ImageThree src="images/hero-image-3.jpeg"></ImageThree>
-        <ImageFour src="images/hero-image-4.jpeg"></ImageFour> */}
-
         <DivBackgroundMargin>
           <h1 id="story">Our Story</h1>
+
           <p className="story-description">
             Active Horizons Health Group was established in 2024 with a mission
             to revolutionise access to high-quality physiotherapy care.
