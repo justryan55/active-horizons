@@ -7,6 +7,7 @@ const DivIcons = styled.div`
   justify-content: center;
   align-items: center;
   column-gap: 20px;
+  row-gap: 20px;
 
   h1 {
     font-size: 2.5rem;
@@ -18,7 +19,7 @@ const DivFlex = styled.div`
   display: flex;
   justify-content: center;
   height: 100%;
-  min-height: 100vh;
+  /* min-height: 100vh; */
 `;
 
 const DivWhite = styled.div`
@@ -93,7 +94,7 @@ export default function Physiotherapy() {
                 "No more waiting weeks or even months to see a local physiotherapist. Online services significantly reduce wait times, allowing you to start your therapy sooner."
               }
             />
-
+            {/* 
             <InfoIcon
               img="healthcare"
               alt="healthcare"
@@ -101,7 +102,7 @@ export default function Physiotherapy() {
               description={
                 "Receive tailored treatment plans and exercises specific to your needs, just as you would in a face-to-face setting."
               }
-            />
+            /> */}
 
             <InfoIcon
               img="home"
@@ -129,24 +130,24 @@ export default function Physiotherapy() {
                 "Maintain consistent care even when circumstances prevent in-person visits, such as during travel or in times of illness."
               }
             />
+            {/* 
+            <InfoIcon
+              img="soccer"
+              alt="soccer"
+              title="Participate in activities of daily living"
+              description={
+                "Enhance your ability to engage in daily activities, whether it's playing, attending school, or working, by improving your physical capabilities."
+              }
+            />
 
-            {/* <InfoIcon
-            img="soccer"
-            alt="soccer"
-            title="Participate in activities of daily living"
-            description={
-              "Enhance your ability to engage in daily activities, whether it's playing, attending school, or working, by improving your physical capabilities."
-            }
-          />
-
-          <InfoIcon
-            img="gardening"
-            alt="gardening"
-            title="Increase Independence in Daily Routines"
-            description={
-              "Gain the skills and strength needed to perform daily routines independently, enhancing your quality of life."
-            }
-          /> */}
+            <InfoIcon
+              img="gardening"
+              alt="gardening"
+              title="Increase Independence in Daily Routines"
+              description={
+                "Gain the skills and strength needed to perform daily routines independently, enhancing your quality of life."
+              }
+            /> */}
           </DivIcons>
         </DivFlex>
       </DivWhite>

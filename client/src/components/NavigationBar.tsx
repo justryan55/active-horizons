@@ -112,65 +112,97 @@ const NavLinkLogo = styled(Link)`
 `;
 
 const Button = styled.button`
-  font-size: 1.5rem;
-  cursor: pointer;
-  padding: 0.5rem 1.5rem;
-  font-weight: bold;
+  font-size: 1.2rem;
+  font-weight: 600;
+  padding: 1rem 2.5rem;
   border: none;
-  margin: 0px 40px;
+  border-radius: 8px;
+  cursor: pointer;
+  position: relative;
+  overflow: hidden;
+  background-color: #4caf50;
+  color: #fff;
+  text-transform: uppercase;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  transition: background-color 0.3s, transform 0.2s;
+  margin-left: 0px;
 
-  --c: #90be6d;
-
-  box-shadow: 0 0 0 0.1em inset var(--c);
-  --_g: linear-gradient(var(--c) 0 0) no-repeat;
-  background: var(--_g) calc(var(--_p, 0%) - 100%) 0%,
-    var(--_g) calc(200% - var(--_p, 0%)) 0%,
-    var(--_g) calc(var(--_p, 0%) - 100%) 100%,
-    var(--_g) calc(200% - var(--_p, 0%)) 100%;
-  background-size: 50.5% calc(var(--_p, 0%) / 2 + 0.5%);
-  outline-offset: 0.1em;
-  transition: background-size 0.4s, background-position 0s 0.4s;
-  border-radius: 10px;
-
-  &:hover {
-    --_p: 100%;
-    transition: background-position 0.4s, background-size 0s;
+  &:before {
+    content: "";
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 300%;
+    height: 300%;
+    background-color: rgba(255, 255, 255, 0.1);
+    transition: width 0.3s ease-out, height 0.3s ease-out, background-color 0.3s;
+    border-radius: 50%;
+    z-index: 0;
+    transform: translate(-50%, -50%);
   }
 
-  &:active {
-    background-color: var(--c);
-    color: #fff;
+  &:hover {
+    background-color: #2e7d32;
+    transform: translateY(-2px);
+  }
+
+  &:hover:before {
+    width: 0;
+    height: 0;
+    background-color: transparent;
+  }
+
+  &:focus {
+    outline: none;
+    box-shadow: 0 0 0 3px rgba(0, 123, 255, 0.5);
   }
 `;
 
 const MobileButton = styled.button`
-  font-size: 1.5rem;
-  cursor: pointer;
-  padding: 0.5rem 1.5rem;
-  font-weight: bold;
+  font-size: 1.2rem;
+  font-weight: 600;
+  padding: 1rem 1rem;
   border: none;
-  margin: 50px 40px;
-  --c: #90be6d;
-  border-radius: 10px;
+  border-radius: 8px;
+  cursor: pointer;
+  position: relative;
+  overflow: hidden;
+  background-color: #4caf50;
+  color: #fff;
+  text-transform: uppercase;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  transition: background-color 0.3s, transform 0.2s;
+  margin-left: 0px;
+  margin-top: 50px;
 
-  box-shadow: 0 0 0 0.1em inset var(--c);
-  --_g: linear-gradient(var(--c) 0 0) no-repeat;
-  background: var(--_g) calc(var(--_p, 0%) - 100%) 0%,
-    var(--_g) calc(200% - var(--_p, 0%)) 0%,
-    var(--_g) calc(var(--_p, 0%) - 100%) 100%,
-    var(--_g) calc(200% - var(--_p, 0%)) 100%;
-  background-size: 50.5% calc(var(--_p, 0%) / 2 + 0.5%);
-  outline-offset: 0.1em;
-  transition: background-size 0.4s, background-position 0s 0.4s;
-
-  &:hover {
-    --_p: 100%;
-    transition: background-position 0.4s, background-size 0s;
+  &:before {
+    content: "";
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 300%;
+    height: 300%;
+    background-color: rgba(255, 255, 255, 0.1);
+    transition: width 0.3s ease-out, height 0.3s ease-out, background-color 0.3s;
+    border-radius: 50%;
+    z-index: 0;
+    transform: translate(-50%, -50%);
   }
 
-  &:active {
-    background-color: var(--c);
-    color: #fff;
+  &:hover {
+    background-color: #2e7d32;
+    transform: translateY(-2px);
+  }
+
+  &:hover:before {
+    width: 0;
+    height: 0;
+    background-color: transparent;
+  }
+
+  &:focus {
+    outline: none;
+    box-shadow: 0 0 0 3px rgba(0, 123, 255, 0.5);
   }
 `;
 
@@ -423,7 +455,7 @@ export const NavigationBar = () => {
                   to="team"
                   smooth={true}
                   duration={500}
-                  offset={-135}
+                  offset={-95}
                   spy={true}
                   hashSpy={true}
                 >

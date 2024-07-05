@@ -73,16 +73,16 @@ export const Footer = () => {
 
       <Header>
         <ItemLink to="/about">Company</ItemLink>
-        <ItemLink to="/about#our-story">
+        <ItemLink to="/about#story">
           <HeaderSubItem>Our Story</HeaderSubItem>
         </ItemLink>
-        <ItemLink to="/about#our-mission">
+        <ItemLink to="/about#mission">
           <HeaderSubItem>Our Mission</HeaderSubItem>
         </ItemLink>
-        <ItemLink to="/about#our-values">
+        <ItemLink to="/about#values">
           <HeaderSubItem>Our Values</HeaderSubItem>
         </ItemLink>
-        <ItemLink to="/about#our-team">
+        <ItemLink to="/about#team">
           <HeaderSubItem>Our Team</HeaderSubItem>
         </ItemLink>
       </Header>

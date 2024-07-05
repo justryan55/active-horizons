@@ -212,7 +212,7 @@ export default function About() {
             receive the physiotherapy care they need, wherever they are.
           </p>
         </DivBackgroundMargin>
-        <BackgroundImage src="images/vital.svg" />
+        {/* <BackgroundImage src="images/vital.svg" /> */}
       </DivStory>
       <DivMission>
         <DivBackground>
