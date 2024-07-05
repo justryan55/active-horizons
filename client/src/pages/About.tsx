@@ -192,7 +192,7 @@ const GridDiv = styled.div`
 
 const BackgroundImage = styled.img`
   position: absolute;
-  height: 270%;
+  width: 115%;
   opacity: 100%;
 `;
 
@@ -212,6 +212,7 @@ export default function About() {
             receive the physiotherapy care they need, wherever they are.
           </p>
         </DivBackgroundMargin>
+        <BackgroundImage src="images/vital.svg" />
       </DivStory>
       <DivMission>
         <DivBackground>
@@ -286,47 +287,50 @@ export default function About() {
         </GridDiv>
       </DivValues>
       <DivTeam id="team">
-        <Title>Our Team</Title>
-        <ProfileImage src="/images/profile.jpeg" alt="profile" />
-        <Name>Ryan Irani</Name>
-        <Role>Principal Physiotherapist and Director</Role> <br />
-        <Text>
-          My name is Ryan, and I am the Director and Principal Physiotherapist
-          at Active Horizons Health Group. I earned my Bachelor of Health
-          Sciences and Master of Physiotherapy Practice from La Trobe
-          University, Bundoora, in 2018.
-        </Text>
-        <br />
-        <Text>
-          Since completing my studies, I have practiced physiotherapy across
-          diverse environments, including private clinics, public and private
-          hospitals, workplaces, community settings, and even through innovative
-          telehealth services using virtual reality headsets. This broad
-          exposure has allowed me to work with a wide variety of patients, each
-          with their own unique health challenges and personal goals. I am
-          particularly adept at managing intricate funding systems such as the
-          NDIS. This expertise enables me to secure the necessary resources for
-          my clients, optimising their therapeutic outcomes and helping them
-          achieve their aspirations.
-        </Text>
-        <br />
-        <Text>
-          My approach to physiotherapy involves a deep understanding of each
-          individual, ensuring that every treatment plan is tailored to their
-          specific needs and goals. I prioritise a holistic view of health,
-          addressing not just the physical aspects but also considering the
-          emotional and social factors that contribute to overall well-being.
-        </Text>
-        <br />
-        <Text>
-          Outside of physiotherapy, I love to keep active by gymming and going
-          for runs. I have a passion for travel, always eager to explore new
-          places, experience different cultures, and broaden my horizons. I
-          believe in lifelong learning and continuously seek opportunities to
-          expand my professional skills and knowledge. Additionally, I cherish
-          spending quality time with friends, enjoying everything from relaxed
-          get-togethers to exciting adventures.
-        </Text>
+        {" "}
+        <DivBackground>
+          <Title>Our Team</Title>
+          <ProfileImage src="/images/profile.jpeg" alt="profile" />
+          <Name>Ryan Irani</Name>
+          <Role>Principal Physiotherapist and Director</Role> <br />
+          <Text>
+            My name is Ryan, and I am the Director and Principal Physiotherapist
+            at Active Horizons Health Group. I earned my Bachelor of Health
+            Sciences and Master of Physiotherapy Practice from La Trobe
+            University, Bundoora, in 2018.
+          </Text>
+          <br />
+          <Text>
+            Since completing my studies, I have practiced physiotherapy across
+            diverse environments, including private clinics, public and private
+            hospitals, workplaces, community settings, and even through
+            innovative telehealth services using virtual reality headsets. This
+            broad exposure has allowed me to work with a wide variety of
+            patients, each with their own unique health challenges and personal
+            goals. I am particularly adept at managing intricate funding systems
+            such as the NDIS. This expertise enables me to secure the necessary
+            resources for my clients, optimising their therapeutic outcomes and
+            helping them achieve their aspirations.
+          </Text>
+          <br />
+          <Text>
+            My approach to physiotherapy involves a deep understanding of each
+            individual, ensuring that every treatment plan is tailored to their
+            specific needs and goals. I prioritise a holistic view of health,
+            addressing not just the physical aspects but also considering the
+            emotional and social factors that contribute to overall well-being.
+          </Text>
+          <br />
+          <Text>
+            Outside of physiotherapy, I love to keep active by gymming and going
+            for runs. I have a passion for travel, always eager to explore new
+            places, experience different cultures, and broaden my horizons. I
+            believe in lifelong learning and continuously seek opportunities to
+            expand my professional skills and knowledge. Additionally, I cherish
+            spending quality time with friends, enjoying everything from relaxed
+            get-togethers to exciting adventures.
+          </Text>
+        </DivBackground>
       </DivTeam>
     </>
   );

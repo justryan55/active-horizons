@@ -1,4 +1,5 @@
 import styled from "styled-components";
+import { Link } from "react-router-dom";
 
 const FooterContainer = styled.section`
   width: 100%;
@@ -8,9 +9,14 @@ const FooterContainer = styled.section`
   border-top: 1px solid #e0e0e0;
 
   display: grid;
-  grid-template-columns: repeat(5, 1fr);
+  grid-template-columns: repeat(3, 1fr);
   justify-items: center;
   align-items: center;
+
+  a {
+    text-decoration: none;
+    color: black;
+  }
 `;
 
 const Header = styled.div`
@@ -20,39 +26,69 @@ const Header = styled.div`
 const HeaderSubItem = styled.div`
   font-size: 1rem;
   margin-top: 1.5rem;
+
+  img {
+    margin-left: 10px;
+  }
+
+  img:hover {
+    cursor: pointer;
+  }
+`;
+
+const ItemLink = styled(Link)`
+  text-decoration: none;
+  color: black;
 `;
 
 export const Footer = () => {
   return (
     <FooterContainer>
       <Header>
-        Active Horizons Logo
-        <HeaderSubItem>Social Media</HeaderSubItem>
-        <HeaderSubItem>Phone Number</HeaderSubItem>
-        <HeaderSubItem>Email</HeaderSubItem>
+        Active Horizons
+        <HeaderSubItem>
+          <img src="/images/instagram.svg" alt="instagram" />
+          <img src="/images/facebook.svg" alt="facebook" />
+        </HeaderSubItem>
+        <HeaderSubItem>activehorizonshg@gmail.com</HeaderSubItem>
       </Header>
 
-      <Header>
+      {/* <Header>
         Support
         <HeaderSubItem>FAQs</HeaderSubItem>
         <HeaderSubItem>Feedback</HeaderSubItem>
-      </Header>
+      </Header> */}
       <Header>
-        Policies
-        <HeaderSubItem>Privacy Policy</HeaderSubItem>
-        <HeaderSubItem>Terms of Service</HeaderSubItem>
-        <HeaderSubItem>Complaints</HeaderSubItem>
+        <ItemLink to="/policies">Policies</ItemLink>
+        <a href="/files/privacy-policy.pdf" download>
+          <HeaderSubItem>Privacy Policy</HeaderSubItem>
+        </a>
+        <a href="/files/terms-of-service.pdf" download>
+          <HeaderSubItem>Terms of Service</HeaderSubItem>
+        </a>
+        <a href="/files/complaints-policy.pdf" download>
+          <HeaderSubItem>Complaints</HeaderSubItem>
+        </a>
       </Header>
 
       <Header>
-        Company
-        <HeaderSubItem>Our Story</HeaderSubItem>
-        <HeaderSubItem>Our Team</HeaderSubItem>
-        <HeaderSubItem>Mission</HeaderSubItem>
+        <ItemLink to="/about">Company</ItemLink>
+        <ItemLink to="/about#our-story">
+          <HeaderSubItem>Our Story</HeaderSubItem>
+        </ItemLink>
+        <ItemLink to="/about#our-mission">
+          <HeaderSubItem>Our Mission</HeaderSubItem>
+        </ItemLink>
+        <ItemLink to="/about#our-values">
+          <HeaderSubItem>Our Values</HeaderSubItem>
+        </ItemLink>
+        <ItemLink to="/about#our-team">
+          <HeaderSubItem>Our Team</HeaderSubItem>
+        </ItemLink>
       </Header>
-      <Header>
+      {/* <Header>
         Resources <HeaderSubItem>Blog</HeaderSubItem>
-      </Header>
+      </Header> */}
     </FooterContainer>
   );
 };

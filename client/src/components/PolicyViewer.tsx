@@ -1,48 +1,14 @@
 import styled, { keyframes } from "styled-components";
 
-import { useEffect, useState } from "react";
-
-const shakeAnimation = keyframes`
-  0% { transform: rotate(0deg); }
-  20% { transform: rotate(-5deg); }
-  40% { transform: rotate(5deg); }
-  60% { transform: rotate(-5deg); }
-  80% { transform: rotate(5deg); }
-  100% { transform: rotate(0deg); }
-`;
+import { useState } from "react";
 
 const Div = styled.div`
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  width: 200px;
-  height: 200px;
-  border-radius: 10px;
-  background-color: white;
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.075);
-  padding: 10px;
-  transition: transform 0.3s ease, background-color 0.3s ease;
-
-  &:hover {
+  p:hover {
     cursor: pointer;
-    transform: scale(1.1);
-    transition: transform 0.3s ease;
-    background-color: #f0f0f0;
-  }
-
-  img {
-    height: 50px;
-  }
-
-  img:hover {
-    animation: ${shakeAnimation} 0.5s ease;
-    animation-iteration-count: 1;
-  }
-
-  p {
-    font-size: 1.5rem;
-    text-align: center;
   }
 `;
 
@@ -65,7 +31,6 @@ const ModalOverlay = styled.div`
   display: flex;
   justify-content: center;
   align-items: center;
-
   animation: ${fadeIn} 0.2s ease;
 `;
 
@@ -73,9 +38,10 @@ const Modal = styled.div`
   background-color: white;
   padding: 50px;
   border-radius: 10px;
-  max-width: 30%;
-  max-height: 80%;
-  min-height: 200px;
+  max-width: 70%;
+  max-height: 70%;
+
+  margin-top: 5%;
 
   overflow: auto;
 
@@ -86,22 +52,34 @@ const Modal = styled.div`
   text-align: center;
   animation: ${fadeIn} 0.2s ease;
 
-  img {
-    height: 75px;
-  }
+  z-index: 1000;
 `;
 
 const ModalButton = styled.button`
-  position: absolute;
-  top: 10px;
-  right: 10px;
+  position: relative;
+  left: 50%;
   background: none;
   border: none;
   cursor: pointer;
   font-size: 20px;
+  color: black;
 `;
 
-export default function InfoIcon({ img, alt, title, description }) {
+const DescriptionText = styled.pre`
+  max-width: 100%;
+  font-size: 14px;
+  line-height: 1.6;
+  color: black;
+  white-space: pre-line;
+  min-height: 50%;
+
+  h3 {
+    font-weight: bold;
+    margin-top: 1em;
+  }
+`;
+
+export default function PolicyViewer({ title, description }) {
   const [isOpen, setIsOpen] = useState(false);
 
   const handleClick = () => {
@@ -115,16 +93,17 @@ export default function InfoIcon({ img, alt, title, description }) {
   return (
     <>
       <Div onClick={handleClick}>
-        <img src={`/images/${img}.svg`} alt={alt} />
         <p>{title}</p>
       </Div>
       {isOpen && (
         <ModalOverlay isOpen={isOpen} onClick={closeModal}>
           <Modal>
             <ModalButton onClick={closeModal}>X</ModalButton>
-            <img src={`/images/${img}.svg`} alt={alt} />
+
             <h2>{title}</h2>
-            <p>{description}</p>
+            <DescriptionText
+              dangerouslySetInnerHTML={{ __html: description }}
+            />
           </Modal>
         </ModalOverlay>
       )}

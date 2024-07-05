@@ -5,6 +5,7 @@ import Blog from "../pages/Blog";
 import Physiotherapy from "../pages/Physiotherapy";
 import Layout from "../components/Layout";
 import About from "../pages/About";
+import Policies from "../pages/Policies";
 
 const AppRouter = () => {
   return (
@@ -48,6 +49,14 @@ const AppRouter = () => {
           element={
             <Layout>
               <Physiotherapy />
+            </Layout>
+          }
+        />
+        <Route
+          path="/policies"
+          element={
+            <Layout>
+              <Policies />
             </Layout>
           }
         />

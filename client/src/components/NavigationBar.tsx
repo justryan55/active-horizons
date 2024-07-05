@@ -371,7 +371,9 @@ export const NavigationBar = () => {
         </BurgerMenu>
       ) : (
         <Nav>
-          <NavDiv>Active Horizons</NavDiv>
+          <NavLink to="/">
+            <NavDiv>Active Horizons</NavDiv>
+          </NavLink>
           <NavDiv>
             <div>
               <NavLink
