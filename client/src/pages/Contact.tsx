@@ -74,7 +74,7 @@ export default function Contact() {
             </ContactContent>
             <IconDivContainer>
               <img src="/images/map-pin.svg" alt="location" />
-              We are based 100% remotely.
+              We operate entirely remotely{" "}
             </IconDivContainer>
             <IconDivContainer>
               <img src="/images/mail.svg" alt="email" />

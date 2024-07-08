@@ -1,4 +1,5 @@
 import styled from "styled-components";
+import { Link } from "react-router-dom";
 
 const DivContainer = styled.div`
   display: flex;
@@ -91,7 +92,9 @@ export default function Home() {
       <Header>Active Horizons Health Group</Header>
       <Text>A Step Towards Independence: Any Time, Anywhere.</Text>
       <ButtonDiv>
-        <ButtonBlue>Learn More</ButtonBlue>
+        <Link to="/about">
+          <ButtonBlue>Learn More</ButtonBlue>
+        </Link>
         <ButtonGreen>Start Today</ButtonGreen>
       </ButtonDiv>
     </DivContainer>

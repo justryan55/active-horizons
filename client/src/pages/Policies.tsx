@@ -2,7 +2,7 @@ import styled from "styled-components";
 import PolicyViewer from "../components/PolicyViewer";
 
 const DivContainer = styled.div`
-  min-height: 100vh;
+  min-height: 80vh;
   height: 100%;
   display: flex;
   justify-content: center;
@@ -20,7 +20,7 @@ const DivBackground = styled.div`
 
   width: 40%;
   z-index: 1000;
-  border-radius: 30px;
+  /* border-radius: 30px; */
 `;
 const Title = styled.h1`
   font-size: 2.5rem;

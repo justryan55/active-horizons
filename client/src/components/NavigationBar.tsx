@@ -335,7 +335,6 @@ export const NavigationBar = () => {
               </div>
             )}
           </div>
-          <NavLinkMobile to="/pricing">Pricing</NavLinkMobile>
           <NavLinkMobile onClick={handleProcessMouseClick} to="/physiotherapy">
             Physiotherapy ▾
           </NavLinkMobile>
@@ -359,6 +358,15 @@ export const NavigationBar = () => {
                   hashSpy={true}
                 >
                   <SubMenuItem>Process</SubMenuItem>
+                </ScrollLink>
+                <ScrollLink
+                  to="pricing"
+                  smooth={true}
+                  duration={500}
+                  spy={true}
+                  hashSpy={true}
+                >
+                  <SubMenuItem>Pricing</SubMenuItem>
                 </ScrollLink>
               </div>
             )}
@@ -432,7 +440,6 @@ export const NavigationBar = () => {
                 </ScrollLink>
               </MenuContainer>
             </div>
-            <NavLink to="/pricing">Pricing</NavLink>
             <div>
               <NavLink
                 to="/physiotherapy"
@@ -451,7 +458,7 @@ export const NavigationBar = () => {
                   to="benefits"
                   smooth={true}
                   duration={500}
-                  offset={-150}
+                  offset={-200}
                   spy={true}
                   hashSpy={true}
                 >
@@ -461,11 +468,21 @@ export const NavigationBar = () => {
                   to="process"
                   smooth={true}
                   duration={500}
-                  offset={-95}
+                  offset={-200}
                   spy={true}
                   hashSpy={true}
                 >
                   <SubMenuItem>Process</SubMenuItem>
+                </ScrollLink>
+                <ScrollLink
+                  to="pricing"
+                  smooth={true}
+                  duration={500}
+                  offset={-200}
+                  spy={true}
+                  hashSpy={true}
+                >
+                  <SubMenuItem>Pricing</SubMenuItem>
                 </ScrollLink>
               </MenuContainer>
             </div>
