@@ -19,8 +19,7 @@ const Div = styled.div`
   width: 200px;
   height: 200px;
   /* border-radius: 10px; */
-  background-color: ${(props) =>
-    props.isWhite ? "white" : "rgb(129, 187, 197)"};
+  background-color: ${(props) => (props.isWhite ? "white" : "#4caf50")};
   /* box-shadow: 0 4px 8px rgba(0, 0, 0, 0.075); */
   padding: 10px;
   transition: transform 0.3s ease, background-color 0.3s ease;
@@ -31,8 +30,7 @@ const Div = styled.div`
     cursor: pointer;
     transform: scale(1.1);
     transition: transform 0.3s ease;
-    background-color: ${(props) =>
-      props.isWhite ? "#f0f0f0" : "rgb(103, 150, 158)"};
+    background-color: ${(props) => (props.isWhite ? "#f0f0f0" : "#2e7d32")};
   }
 
   img {
