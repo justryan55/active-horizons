@@ -2,7 +2,7 @@ import styled from "styled-components";
 import ValueIcon from "../components/ValueIcon";
 import Carousel from "react-multi-carousel";
 import "react-multi-carousel/lib/styles.css";
-import { useEffect } from "react";
+import { useEffect, useState } from "react";
 
 const DivStory = styled.div`
   height: 100%;
@@ -97,6 +97,7 @@ const DivStoryContainer = styled.div`
   /* padding: 20px 0px; */
 
   width: 50%;
+
   z-index: 1000;
   min-height: 100vh;
   height: 100%;
@@ -264,6 +265,7 @@ const CarouselContainer = styled.div`
 `;
 
 export default function About() {
+  const [isDesktop, setIsDesktop] = useState(true);
   const responsive = {
     desktop: {
       breakpoint: { max: 3000, min: 1024 },
@@ -281,6 +283,19 @@ export default function About() {
       slidesToSlide: 1,
     },
   };
+
+  useEffect(() => {
+    const handleResize = () => {
+      if (window.innerWidth <= 1050) {
+        setIsDesktop(false);
+      }
+    };
+
+    handleResize();
+
+    window.addEventListener("resize", handleResize);
+    return () => window.removeEventListener("resize", handleResize);
+  }, []);
 
   return (
     <>

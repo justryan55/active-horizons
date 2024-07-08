@@ -18,17 +18,20 @@ const Div = styled.div`
   align-items: center;
   width: 200px;
   height: 200px;
-  border-radius: 10px;
-  background-color: white;
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.075);
+  /* border-radius: 10px; */
+  background-color: ${(props) =>
+    props.isWhite ? "white" : "rgb(129, 187, 197)"};
+  /* box-shadow: 0 4px 8px rgba(0, 0, 0, 0.075); */
   padding: 10px;
   transition: transform 0.3s ease, background-color 0.3s ease;
+  margin: 5px;
 
   &:hover {
     cursor: pointer;
     transform: scale(1.1);
     transition: transform 0.3s ease;
-    background-color: #f0f0f0;
+    background-color: ${(props) =>
+      props.isWhite ? "#f0f0f0" : "rgb(103, 150, 158)"};
   }
 
   img {
@@ -41,7 +44,8 @@ const Div = styled.div`
   }
 
   p {
-    font-size: 1.5rem;
+    font-size: 1.2rem;
+    padding-top: 10px;
     text-align: center;
   }
 `;
@@ -101,7 +105,7 @@ const ModalButton = styled.button`
   font-size: 20px;
 `;
 
-export default function InfoIcon({ img, alt, title, description }) {
+export default function InfoIcon({ img, alt, title, description, isWhite }) {
   const [isOpen, setIsOpen] = useState(false);
 
   const handleClick = () => {
@@ -114,7 +118,7 @@ export default function InfoIcon({ img, alt, title, description }) {
 
   return (
     <>
-      <Div onClick={handleClick}>
+      <Div onClick={handleClick} isWhite={isWhite}>
         <img src={`/images/${img}.svg`} alt={alt} />
         <p>{title}</p>
       </Div>

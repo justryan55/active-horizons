@@ -1,5 +1,6 @@
 import styled from "styled-components";
 import InfoIcon from "../components/InfoIcon";
+import { FaAngleDown } from "react-icons/fa";
 
 const DivIcons = styled.div`
   display: grid;
@@ -15,6 +16,12 @@ const DivIcons = styled.div`
   }
 `;
 
+const Title = styled.h1`
+  font-size: 2.5rem;
+  font-weight: bold;
+  margin-bottom: 40px;
+`;
+
 const DivFlex = styled.div`
   display: flex;
   justify-content: center;
@@ -22,7 +29,7 @@ const DivFlex = styled.div`
   /* min-height: 100vh; */
 `;
 
-const DivWhite = styled.div`
+const DivWhiteContainer = styled.div`
   height: 100%;
   min-height: 100vh;
   background-color: #efefef;
@@ -32,7 +39,7 @@ const DivWhite = styled.div`
   padding-top: 50px;
 `;
 
-const DivBlue = styled.div`
+const DivBlueContainer = styled.div`
   height: 100%;
   min-height: 100vh;
   background-color: #81bbc5;
@@ -43,11 +50,35 @@ const DivBlue = styled.div`
   padding-top: 50px;
 `;
 
+const DivGrid = styled.div`
+  display: flex;
+  flex-direction: column;
+  padding-bottom: 50px;
+  width: 30%;
+`;
+
+const ProcessDivContainer = styled.div`
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 50px;
+  border-radius: 10px;
+  background-color: white;
+  text-align: center;
+  /* height: 100px; */
+`;
+
+const ArrowDiv = styled.div`
+  display: flex;
+  justify-content: center;
+  padding: 20px;
+`;
+
 export default function Physiotherapy() {
   return (
     <>
-      <DivWhite>
-        <h1 id="benefits">The Benefits of Online Physiotherapy?</h1>
+      <DivWhiteContainer>
+        <Title>The Benefits of Online Physiotherapy?</Title>
         <DivFlex>
           <DivIcons>
             <InfoIcon
@@ -57,6 +88,7 @@ export default function Physiotherapy() {
               description={
                 "Skip the commute and enjoy the convenience of accessing high-quality physiotherapy from the comfort of your home."
               }
+              isWhite={true}
             />
 
             <InfoIcon
@@ -75,6 +107,7 @@ export default function Physiotherapy() {
               description={
                 "Online physiotherapy offers the ultimate flexibility, making it easier to fit sessions into your busy life, whether you're balancing work, family, or other commitments."
               }
+              isWhite={true}
             />
 
             <InfoIcon
@@ -111,6 +144,7 @@ export default function Physiotherapy() {
               description={
                 "Conduct your physiotherapy sessions in the comfort of your own home, which can help you feel more relaxed and open to the treatment process."
               }
+              isWhite={true}
             />
 
             <InfoIcon
@@ -129,6 +163,7 @@ export default function Physiotherapy() {
               description={
                 "Maintain consistent care even when circumstances prevent in-person visits, such as during travel or in times of illness."
               }
+              isWhite={true}
             />
             {/* 
             <InfoIcon
@@ -150,19 +185,49 @@ export default function Physiotherapy() {
             /> */}
           </DivIcons>
         </DivFlex>
-      </DivWhite>
+      </DivWhiteContainer>
 
-      <DivBlue>
-        <h1 id="process">The Process</h1>
-        <p>Book an appointment and complete the intake forms</p>
-        <p>
-          Intake session: Goals and frequency of appointments discussed and
-          service agreement completed
-        </p>
-        <p>Initial assessment</p>
-        <p>Therapy</p>
-        <p>Regular monitoring to ensure making progress towards goals</p>
-      </DivBlue>
+      <DivBlueContainer>
+        <Title id="process">The Process</Title>
+
+        <DivGrid>
+          <ProcessDivContainer>
+            Complete the online referral form
+          </ProcessDivContainer>
+          <ArrowDiv>
+            <FaAngleDown size={50} />
+          </ArrowDiv>
+
+          <ProcessDivContainer>
+            You will then be contacted by your practitioner within 24-48 hours
+            to schedule in your first appointment
+          </ProcessDivContainer>
+          <ArrowDiv>
+            <FaAngleDown size={50} />
+          </ArrowDiv>
+
+          <ProcessDivContainer>
+            The first appointment will include goal setting and the initial
+            assessment. Following this, a discussion of suitable management
+            plans will take place and the most appropriate plan will be
+            scheduled in.
+          </ProcessDivContainer>
+          <ArrowDiv>
+            <FaAngleDown size={50} />
+          </ArrowDiv>
+
+          <ProcessDivContainer>
+            Online physiotherapy will be completed as per the management plan
+          </ProcessDivContainer>
+          <ArrowDiv>
+            <FaAngleDown size={50} />
+          </ArrowDiv>
+          <ProcessDivContainer>
+            Regular monitoring will take place to ensure that you are making
+            progress towards your goals
+          </ProcessDivContainer>
+        </DivGrid>
+      </DivBlueContainer>
       {/* <DivGreen>
         <p></p>
       </DivGreen>
