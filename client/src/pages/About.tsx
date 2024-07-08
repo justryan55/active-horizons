@@ -14,7 +14,6 @@ const DivStory = styled.div`
   align-items: flex-start;
   justify-content: center;
   text-align: center;
-
   /* background: url("/images/hero-image.jpeg") center/contain repeat, #efefef;
 
   ::before {
@@ -96,8 +95,7 @@ const DivStoryContainer = styled.div`
   /* box-shadow: 0 4px 8px rgba(0, 0, 0, 0.4); */
   /* padding: 20px 0px; */
 
-  width: 50%;
-
+  width: ${(props) => (props.isDesktop ? "50%" : "100%")};
   z-index: 1000;
   min-height: 100vh;
   height: 100%;
@@ -109,7 +107,7 @@ const DivValues = styled.div`
   background-color: #efefef;
 
   display: flex;
-  flex-direction: row;
+  flex-direction: ${(props) => (props.isDesktop ? "row" : "column")};
   align-items: flex-start;
   justify-content: center;
   text-align: center;
@@ -141,7 +139,7 @@ const DivValuesContainer = styled.div`
   /* box-shadow: 0 4px 8px rgba(0, 0, 0, 0.4); */
   /* padding: 20px 0px; */
 
-  min-width: 50%;
+  min-width: ${(props) => (props.isDesktop ? "50%" : "100%")};
   z-index: 1000;
   min-height: 100vh;
   height: 100%;
@@ -152,11 +150,12 @@ const DivMissionContainer = styled.div`
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  background-color: white;
+  background-color: ${(props) =>
+    props.isDesktop ? "white" : "rgb(129, 187, 197, 1)"};
   /* box-shadow: 0 4px 8px rgba(0, 0, 0, 0.4); */
   /* padding: 20px 0px; */
 
-  width: 50%;
+  width: ${(props) => (props.isDesktop ? "50%" : "100%")};
   z-index: 1000;
   min-height: 100vh;
   height: 100%;
@@ -170,7 +169,7 @@ const DivTeamRight = styled.div`
   background-color: white;
   padding: 40px 0px;
 
-  width: 50%;
+  width: ${(props) => (props.isDesktop ? "50%" : "100%")};
   z-index: 1000;
   /* border-radius: 50px; */
 
@@ -184,7 +183,7 @@ const DivTeam = styled.div`
   background-color: rgb(129, 187, 197);
 
   display: flex;
-  flex-direction: row;
+  flex-direction: ${(props) => (props.isDesktop ? "row" : "column")};
   align-items: center;
   justify-content: center;
   text-align: center;
@@ -251,7 +250,7 @@ const CarouselFlexContainer = styled.div`
   align-items: center;
   min-height: 100vh;
   height: 100%;
-  width: 50%;
+  width: ${(props) => (props.isDesktop ? "50%" : "100%")};
 `;
 
 const BackgroundImage = styled.img`
@@ -265,17 +264,17 @@ const CarouselContainer = styled.div`
 `;
 
 export default function About() {
-  const [isDesktop, setIsDesktop] = useState(true);
+  const [isDesktop, setIsDesktop] = useState(null);
   const responsive = {
     desktop: {
-      breakpoint: { max: 3000, min: 1024 },
+      breakpoint: { max: 3000, min: 1500 },
       items: 3,
       slidesToSlide: 3,
     },
     tablet: {
       breakpoint: { max: 1024, min: 464 },
-      items: 2,
-      slidesToSlide: 2,
+      items: 1,
+      slidesToSlide: 1,
     },
     mobile: {
       breakpoint: { max: 464, min: 0 },
@@ -288,6 +287,8 @@ export default function About() {
     const handleResize = () => {
       if (window.innerWidth <= 1050) {
         setIsDesktop(false);
+      } else {
+        setIsDesktop(true);
       }
     };
 
@@ -300,7 +301,7 @@ export default function About() {
   return (
     <>
       <DivStory>
-        <DivStoryContainer>
+        <DivStoryContainer isDesktop={isDesktop}>
           <h1 id="story">Our Story</h1>
 
           <p className="story-description">
@@ -316,7 +317,7 @@ export default function About() {
         {/* <BackgroundImage src="images/vital.svg" /> */}
       </DivStory>
       <DivMission>
-        <DivMissionContainer>
+        <DivMissionContainer isDesktop={isDesktop}>
           {/* {/* <ImageOne src="images/hero-image-1.jpeg"></ImageOne>
           <ImageTwo src="images/hero-image-2.jpeg"></ImageTwo> */}
 
@@ -332,15 +333,15 @@ export default function About() {
         {/* <BackgroundImage src="images/vital.svg" /> */}
       </DivMission>
 
-      <DivValues>
-        <DivValuesContainer>
+      <DivValues isDesktop={isDesktop}>
+        <DivValuesContainer isDesktop={isDesktop}>
           <h1 id="values">Our Values</h1>
           <p>
             At Active Horizons Health Group, our core values guide everything we
-            do:
+            do.
           </p>
         </DivValuesContainer>
-        <CarouselFlexContainer>
+        <CarouselFlexContainer isDesktop={isDesktop}>
           <CarouselContainer>
             <Carousel
               swipeable={true}
@@ -408,14 +409,14 @@ export default function About() {
           </CarouselContainer>
         </CarouselFlexContainer>
       </DivValues>
-      <DivTeam id="team">
+      <DivTeam id="team" isDesktop={isDesktop}>
         <DivTeamContainer>
           <Title>Our Team</Title>
           <ProfileImage src="/images/profile.jpeg" alt="profile" />
           <Name>Ryan Irani</Name>
           <Role>Principal Physiotherapist and Director</Role> <br />
         </DivTeamContainer>
-        <DivTeamRight>
+        <DivTeamRight isDesktop={isDesktop}>
           <Text>
             My name is Ryan, and I am the Director and Principal Physiotherapist
             at Active Horizons Health Group. I earned my Bachelor of Health
