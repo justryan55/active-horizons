@@ -104,6 +104,11 @@ const NavLinkMobile = styled(Link)`
   text-decoration: none;
   color: inherit;
   margin: 1.5rem 1rem;
+
+  img {
+    height: 100px;
+    padding-left: 3rem;
+  }
 `;
 
 const NavLinkLogo = styled(Link)`
@@ -286,7 +291,9 @@ export const NavigationBar = () => {
     <>
       {showBurgerMenu ? (
         <BurgerMenu right styles={styles}>
-          <NavLinkLogo to="/">Active Horizons</NavLinkLogo>
+          <NavLinkMobile to="/">
+            <img src="/images/logo-2.png" alt="logo" />
+          </NavLinkMobile>
           <NavLinkMobile onClick={handleAboutMouseClick} to="/about">
             About ▾
           </NavLinkMobile>
@@ -344,7 +351,7 @@ export const NavigationBar = () => {
                 <ScrollLink
                   to="benefits"
                   smooth={true}
-                  duration={500}
+                  duration={700}
                   spy={true}
                   hashSpy={true}
                 >

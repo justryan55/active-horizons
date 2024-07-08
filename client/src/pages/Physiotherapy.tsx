@@ -156,7 +156,7 @@ const CTAButton = styled.button`
   font-size: 1.2rem;
   font-weight: 600;
   padding: 1rem 2.5rem;
-  margin-top: 50px;
+  /* margin-top: 50px; */
   color: #fff;
   background-color: #4caf50;
   border: none;
