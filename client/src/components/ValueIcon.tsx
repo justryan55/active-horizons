@@ -10,6 +10,9 @@ const Container = styled.div`
   align-items: center;
   transition: transform 0.3s ease;
   z-index: 1200;
+  width: 80%;
+  height: 85%;
+  margin: 30px;
 
   &:hover {
     transform: translateY(-5px);

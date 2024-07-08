@@ -1,5 +1,8 @@
 import styled from "styled-components";
 import ValueIcon from "../components/ValueIcon";
+import Carousel from "react-multi-carousel";
+import "react-multi-carousel/lib/styles.css";
+import { useEffect } from "react";
 
 const DivStory = styled.div`
   height: 100%;
@@ -103,11 +106,10 @@ const DivValues = styled.div`
   height: 100%;
   min-height: 100vh;
   background-color: #efefef;
-  padding: 50px 20px;
 
   display: flex;
-  flex-direction: column;
-  align-items: center;
+  flex-direction: row;
+  align-items: flex-start;
   justify-content: center;
   text-align: center;
   z-index: 1000;
@@ -129,6 +131,21 @@ const DivValues = styled.div`
   background-size: 130%; */
 `;
 
+const DivValuesContainer = styled.div`
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  background-color: white;
+  /* box-shadow: 0 4px 8px rgba(0, 0, 0, 0.4); */
+  /* padding: 20px 0px; */
+
+  min-width: 50%;
+  z-index: 1000;
+  min-height: 100vh;
+  height: 100%;
+`;
+
 const DivMissionContainer = styled.div`
   display: flex;
   flex-direction: column;
@@ -144,17 +161,20 @@ const DivMissionContainer = styled.div`
   height: 100%;
 `;
 
-const DivBackground = styled.div`
+const DivTeamRight = styled.div`
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  background-color: rgb(129, 187, 197);
+  background-color: white;
   padding: 40px 0px;
 
   width: 50%;
   z-index: 1000;
-  border-radius: 50px;
+  /* border-radius: 50px; */
+
+  height: 100%;
+  min-height: 100vh;
 `;
 
 const DivTeam = styled.div`
@@ -174,7 +194,7 @@ const DivTeamContainer = styled.div`
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  background-color: white;
+  background-color: rgb(129, 187, 197);
   /* box-shadow: 0 4px 8px rgba(0, 0, 0, 0.4); */
   /* padding: 20px 0px; */
 
@@ -223,12 +243,14 @@ const Text = styled.p`
   margin-bottom: 20px;
 `;
 
-const GridDiv = styled.div`
-  display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(min(100%, 33.33%), 1fr));
-  gap: 20px;
-  width: 80%;
-  grid-auto-flow: row;
+const CarouselFlexContainer = styled.div`
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  height: 100%;
+  width: 50%;
 `;
 
 const BackgroundImage = styled.img`
@@ -237,7 +259,29 @@ const BackgroundImage = styled.img`
   opacity: 100%;
 `;
 
+const CarouselContainer = styled.div`
+  width: 100%;
+`;
+
 export default function About() {
+  const responsive = {
+    desktop: {
+      breakpoint: { max: 3000, min: 1024 },
+      items: 3,
+      slidesToSlide: 3,
+    },
+    tablet: {
+      breakpoint: { max: 1024, min: 464 },
+      items: 2,
+      slidesToSlide: 2,
+    },
+    mobile: {
+      breakpoint: { max: 464, min: 0 },
+      items: 1,
+      slidesToSlide: 1,
+    },
+  };
+
   return (
     <>
       <DivStory>
@@ -274,62 +318,80 @@ export default function About() {
       </DivMission>
 
       <DivValues>
-        <h1 id="values">Our Values</h1>
-        <p>
-          At Active Horizons Health Group, our core values guide everything we
-          do:
-        </p>
-        <GridDiv>
-          <ValueIcon
-            img="accessibility"
-            alt="Accessibility"
-            title="Accessibility"
-            description={
-              "We believe that everyone deserves access to high-quality physiotherapy care, regardless of their location or circumstances. We leverage innovative technologies to reach and serve our clients wherever they are."
-            }
-          />
-          <ValueIcon
-            img="world_care"
-            alt="Compassion"
-            title="Compassion"
-            description={
-              "We approach each client with empathy and understanding, recognising their unique health challenges and personal goals. Our compassionate care is tailored to meet individual needs."
-            }
-          />
-          <ValueIcon
-            img="award"
-            alt="Award"
-            title="Excellence"
-            description={
-              "We strive for excellence in all aspects of our service. From our clinical practices to our customer service, we are committed to providing the highest standard of care."
-            }
-          />
-          <ValueIcon
-            img="holistic"
-            alt="Hand"
-            title="Holistic Care"
-            description={
-              "We take a comprehensive approach to health, considering the physical, emotional, and social factors that contribute to well-being. Our treatments are designed to address the whole person."
-            }
-          />
-          <ValueIcon
-            img="justice"
-            alt="Integrity"
-            title="Integrity"
-            description={
-              "We conduct our business with honesty and transparency. Our clients can trust us to act ethically and in their best interests at all times."
-            }
-          />
-
-          <ValueIcon
-            img="empower"
-            alt="Barbell"
-            title="Empowerment"
-            description={
-              "We empower our clients to take an active role in their health and recovery. By providing education and support, we help them achieve their therapeutic goals and improve their quality of life."
-            }
-          />
-        </GridDiv>
+        <DivValuesContainer>
+          <h1 id="values">Our Values</h1>
+          <p>
+            At Active Horizons Health Group, our core values guide everything we
+            do:
+          </p>
+        </DivValuesContainer>
+        <CarouselFlexContainer>
+          <CarouselContainer>
+            <Carousel
+              swipeable={true}
+              draggable={true}
+              showDots={true}
+              responsive={responsive}
+              deviceType={"tablet"}
+              infinite={true}
+              autoPlay={true}
+              autoPlaySpeed={5000}
+              keyBoardControl={true}
+              customTransition="all .5"
+              transitionDuration={500}
+              arrows={false}
+            >
+              <ValueIcon
+                img="accessibility"
+                alt="Accessibility"
+                title="Accessibility"
+                description={
+                  "We believe that everyone deserves access to high-quality physiotherapy care, regardless of their location or circumstances. We leverage innovative technologies to reach and serve our clients wherever they are."
+                }
+              />
+              <ValueIcon
+                img="world_care"
+                alt="Compassion"
+                title="Compassion"
+                description={
+                  "We approach each client with empathy and understanding, recognising their unique health challenges and personal goals. Our compassionate care is tailored to meet individual needs."
+                }
+              />
+              <ValueIcon
+                img="award"
+                alt="Award"
+                title="Excellence"
+                description={
+                  "We strive for excellence in all aspects of our service. From our clinical practices to our customer service, we are committed to providing the highest standard of care."
+                }
+              />
+              <ValueIcon
+                img="holistic"
+                alt="Hand"
+                title="Holistic Care"
+                description={
+                  "We take a comprehensive approach to health, considering the physical, emotional, and social factors that contribute to well-being. Our treatments are designed to address the whole person."
+                }
+              />
+              <ValueIcon
+                img="justice"
+                alt="Integrity"
+                title="Integrity"
+                description={
+                  "We conduct our business with honesty and transparency. Our clients can trust us to act ethically and in their best interests at all times."
+                }
+              />
+              <ValueIcon
+                img="empower"
+                alt="Barbell"
+                title="Empowerment"
+                description={
+                  "We empower our clients to take an active role in their health and recovery. By providing education and support, we help them achieve their therapeutic goals and improve their quality of life."
+                }
+              />
+            </Carousel>
+          </CarouselContainer>
+        </CarouselFlexContainer>
       </DivValues>
       <DivTeam id="team">
         <DivTeamContainer>
@@ -338,7 +400,7 @@ export default function About() {
           <Name>Ryan Irani</Name>
           <Role>Principal Physiotherapist and Director</Role> <br />
         </DivTeamContainer>
-        <DivBackground>
+        <DivTeamRight>
           <Text>
             My name is Ryan, and I am the Director and Principal Physiotherapist
             at Active Horizons Health Group. I earned my Bachelor of Health
@@ -376,7 +438,7 @@ export default function About() {
             spending quality time with friends, enjoying everything from relaxed
             get-togethers to exciting adventures.
           </Text>
-        </DivBackground>
+        </DivTeamRight>
       </DivTeam>
     </>
   );
