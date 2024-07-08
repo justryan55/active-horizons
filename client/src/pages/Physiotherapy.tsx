@@ -1,10 +1,11 @@
 import styled from "styled-components";
 import InfoIcon from "../components/InfoIcon";
 import { FaAngleDown } from "react-icons/fa";
+import { useEffect, useState } from "react";
 
 const DivIcons = styled.div`
   display: grid;
-  grid-template-columns: repeat(4, 1fr);
+  grid-template-columns: repeat(1, 1fr);
   justify-content: center;
   align-items: center;
   column-gap: 20px;
@@ -13,6 +14,14 @@ const DivIcons = styled.div`
   h1 {
     font-size: 2.5rem;
     margin-bottom: 20px;
+  }
+
+  @media (min-width: 768px) {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  @media (min-width: 1050px) {
+    grid-template-columns: repeat(4, 1fr);
   }
 `;
 
@@ -54,7 +63,15 @@ const DivGrid = styled.div`
   display: flex;
   flex-direction: column;
   padding-bottom: 50px;
-  width: 30%;
+  width: 80%;
+
+  @media (min-width: 768px) {
+    width: 80%;
+  }
+
+  @media (min-width: 1050px) {
+    width: 30%;
+  }
 `;
 
 const ProcessDivContainer = styled.div`
@@ -209,7 +226,7 @@ export default function Physiotherapy() {
             The first appointment will include goal setting and the initial
             assessment. Following this, a discussion of suitable management
             plans will take place and the most appropriate plan will be
-            scheduled in.
+            scheduled in
           </ProcessDivContainer>
           <ArrowDiv>
             <FaAngleDown size={50} />

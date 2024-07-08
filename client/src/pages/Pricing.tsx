@@ -1,6 +1,7 @@
 import styled from "styled-components";
 import { FaHandHoldingUsd, FaClock } from "react-icons/fa";
 import { IoDocumentTextSharp } from "react-icons/io5";
+import { useEffect, useState } from "react";
 
 const PricingContainer = styled.div`
   height: 100%;
@@ -34,7 +35,8 @@ const PricingContent = styled.p`
 
 const DivBackground = styled.div`
   display: grid;
-  grid-template-columns: repeat(2, 1fr);
+  grid-template-columns: ${(props) =>
+    props.isDesktop ? "repeat(2, 1fr)" : "repeat(1, 1fr)"};
   justify-content: center;
   align-items: center;
   background-color: rgb(255, 255, 255, 1);
@@ -76,11 +78,28 @@ const CTAButton = styled.button`
 `;
 
 export default function Pricing() {
+  const [isDesktop, setIsDesktop] = useState(null);
+
+  useEffect(() => {
+    const handleResize = () => {
+      if (window.innerWidth <= 1050) {
+        setIsDesktop(false);
+      } else {
+        setIsDesktop(true);
+      }
+    };
+
+    handleResize();
+
+    window.addEventListener("resize", handleResize);
+    return () => window.removeEventListener("resize", handleResize);
+  }, []);
+
   return (
     <PricingContainer>
       <PricingTitle>Pricing</PricingTitle>
 
-      <DivBackground>
+      <DivBackground isDesktop={isDesktop}>
         <div>
           <IconWrapper>
             <FaHandHoldingUsd />

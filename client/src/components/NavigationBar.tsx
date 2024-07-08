@@ -11,7 +11,7 @@ const styles = {
     height: "30px",
     right: "36px",
     top: "36px",
-    zIndex: "5000",
+    zIndex: "1100",
   },
 
   bmBurgerBars: {

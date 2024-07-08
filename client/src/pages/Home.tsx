@@ -13,6 +13,7 @@ const Header = styled.h1`
   color: #333;
   margin-bottom: 20px;
   z-index: 100;
+  text-align: center;
 `;
 
 const Text = styled.h3`
@@ -36,7 +37,7 @@ const ButtonGreen = styled.button`
   text-transform: uppercase;
   box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
   transition: background-color 0.3s, transform 0.2s;
-  margin-left: 20px;
+  margin: 10px;
 
   &:hover {
     background-color: #2e7d32;
@@ -64,7 +65,7 @@ const ButtonBlue = styled.button`
   text-transform: uppercase;
   box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
   transition: background-color 0.3s, transform 0.2s;
-  margin-left: 20px;
+  margin: 10px;
 
   &:hover {
     background-color: rgb(103, 150, 158);
@@ -79,6 +80,9 @@ const ButtonBlue = styled.button`
 
 const ButtonDiv = styled.div`
   display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
 `;
 
 export default function Home() {
