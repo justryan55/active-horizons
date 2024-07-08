@@ -99,7 +99,7 @@ export default function Pricing() {
     <PricingContainer>
       <PricingTitle>Pricing</PricingTitle>
 
-      <DivBackground isDesktop={isDesktop}>
+      <DivBackground>
         <div>
           <IconWrapper>
             <FaHandHoldingUsd />

@@ -29,14 +29,14 @@ const AppRouter = () => {
             </Layout>
           }
         />
-        <Route
+        {/* <Route
           path="/pricing"
           element={
             <Layout>
               <Pricing />
             </Layout>
           }
-        />
+        /> */}
         <Route
           path="/blog"
           element={
