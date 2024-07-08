@@ -25,7 +25,7 @@ const Div = styled.div`
   padding: 10px;
   transition: transform 0.3s ease, background-color 0.3s ease;
   margin: 5px;
-  color: ${(props) => (props.isWhite ? "black" : "white")};
+  color: ${(props) => (props.isWhite ? "black" : "black")};
 
   &:hover {
     cursor: pointer;
