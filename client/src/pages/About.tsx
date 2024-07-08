@@ -149,8 +149,7 @@ const DivBackground = styled.div`
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  background-color: rgb(255, 255, 255, 1);
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.4);
+  background-color: rgb(129, 187, 197);
   padding: 40px 0px;
 
   width: 50%;
@@ -162,13 +161,27 @@ const DivTeam = styled.div`
   height: 100%;
   min-height: 100vh;
   background-color: rgb(129, 187, 197);
-  padding: 50px;
 
   display: flex;
-  flex-direction: column;
+  flex-direction: row;
   align-items: center;
   justify-content: center;
   text-align: center;
+`;
+
+const DivTeamContainer = styled.div`
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  background-color: white;
+  /* box-shadow: 0 4px 8px rgba(0, 0, 0, 0.4); */
+  /* padding: 20px 0px; */
+
+  width: 50%;
+  z-index: 1000;
+  min-height: 100vh;
+  height: 100%;
 `;
 
 const Title = styled.h1`
@@ -319,12 +332,13 @@ export default function About() {
         </GridDiv>
       </DivValues>
       <DivTeam id="team">
-        {" "}
-        <DivBackground>
+        <DivTeamContainer>
           <Title>Our Team</Title>
           <ProfileImage src="/images/profile.jpeg" alt="profile" />
           <Name>Ryan Irani</Name>
           <Role>Principal Physiotherapist and Director</Role> <br />
+        </DivTeamContainer>
+        <DivBackground>
           <Text>
             My name is Ryan, and I am the Director and Principal Physiotherapist
             at Active Horizons Health Group. I earned my Bachelor of Health
