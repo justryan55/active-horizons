@@ -81,7 +81,15 @@ const ProcessDivContainer = styled.div`
   padding: 50px;
   background-color: white;
   text-align: center;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.4);
+  transition: transform 0.3s, box-shadow 0.3s;
+
   /* height: 100px; */
+
+  &:hover {
+    transform: scale(1.05);
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.6);
+  }
 `;
 
 const ArrowDiv = styled.div`
