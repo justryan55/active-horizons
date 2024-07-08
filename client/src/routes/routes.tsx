@@ -7,6 +7,7 @@ import Layout from "../components/Layout";
 import About from "../pages/About";
 import Policies from "../pages/Policies";
 import Home from "../pages/Home";
+import Contact from "../pages/Contact";
 
 const AppRouter = () => {
   return (
@@ -58,6 +59,14 @@ const AppRouter = () => {
           element={
             <Layout>
               <Policies />
+            </Layout>
+          }
+        />
+        <Route
+          path="/contact"
+          element={
+            <Layout>
+              <Contact />
             </Layout>
           }
         />

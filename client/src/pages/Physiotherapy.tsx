@@ -36,7 +36,7 @@ const DivWhiteContainer = styled.div`
   display: flex;
   flex-direction: column;
   align-items: center;
-  padding-top: 50px;
+  padding-top: 25px;
 `;
 
 const DivBlueContainer = styled.div`
@@ -62,7 +62,6 @@ const ProcessDivContainer = styled.div`
   justify-content: center;
   align-items: center;
   padding: 50px;
-  border-radius: 10px;
   background-color: white;
   text-align: center;
   /* height: 100px; */
@@ -78,7 +77,7 @@ export default function Physiotherapy() {
   return (
     <>
       <DivWhiteContainer>
-        <Title>The Benefits of Online Physiotherapy?</Title>
+        <Title>The Benefits</Title>
         <DivFlex>
           <DivIcons>
             <InfoIcon

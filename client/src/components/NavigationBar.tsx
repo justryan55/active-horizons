@@ -62,7 +62,7 @@ const styles = {
 
 const Nav = styled.section`
   width: 100%;
-  height: 6rem;
+  height: 9rem;
   background-color: white;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.075);
   position: sticky;
@@ -91,13 +91,18 @@ const NavLink = styled(Link)`
   &:hover {
     color: blue;
   }
+
+  img {
+    height: 100px;
+    padding: 1.5rem 1.5rem;
+  }
 `;
 
 const NavLinkMobile = styled(Link)`
   font-size: 1.25rem;
   text-decoration: none;
   color: inherit;
-  margin: 1.5rem 1.5rem;
+  margin: 1.5rem 1rem;
 `;
 
 const NavLinkLogo = styled(Link)`
@@ -358,12 +363,16 @@ export const NavigationBar = () => {
             )}
           </div>
           {/* <NavLinkMobile to="/blog">Blog</NavLinkMobile> */}
+          <NavLinkMobile to="/contact">Contact</NavLinkMobile>
+
           <MobileButton>Start today</MobileButton>
         </BurgerMenu>
       ) : (
         <Nav>
           <NavLink to="/">
-            <NavDiv>Active Horizons</NavDiv>
+            <img src="/images/logo-1.png" alt="logo" />
+
+            {/* <NavDiv>Active Horizons</NavDiv> */}
           </NavLink>
           <NavDiv>
             <div>
@@ -460,6 +469,8 @@ export const NavigationBar = () => {
               </MenuContainer>
             </div>
             {/* <NavLink to="/blog">Blog</NavLink> */}
+            <NavLink to="/contact">Contact</NavLink>
+
             <Button>Start today</Button>
           </NavDiv>
         </Nav>

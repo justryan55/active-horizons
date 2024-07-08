@@ -19,16 +19,22 @@ const FooterContainer = styled.section`
   }
 `;
 
+const Logo = styled.img`
+  height: 70px;
+`;
+
 const Header = styled.div`
   font-size: 1.25rem;
 `;
 
 const HeaderSubItem = styled.div`
+  display: flex;
+  align-items: center;
   font-size: 1rem;
   margin-top: 1.5rem;
 
   img {
-    margin-left: 10px;
+    margin-right: 10px;
   }
 
   img:hover {
@@ -45,12 +51,15 @@ export const Footer = () => {
   return (
     <FooterContainer>
       <Header>
-        Active Horizons
-        <HeaderSubItem>
+        <Logo src="images/logo-1.png" alt="logo" />
+        {/* <HeaderSubItem>
           <img src="/images/instagram.svg" alt="instagram" />
           <img src="/images/facebook.svg" alt="facebook" />
+        </HeaderSubItem> */}
+        <HeaderSubItem>
+          <img src="/images/mail.svg" alt="email" />
+          activehorizonshg@gmail.com
         </HeaderSubItem>
-        <HeaderSubItem>activehorizonshg@gmail.com</HeaderSubItem>
       </Header>
 
       {/* <Header>
@@ -73,7 +82,7 @@ export const Footer = () => {
 
       <Header>
         <ItemLink to="/about">Company</ItemLink>
-        <ItemLink to="/about#story">
+        <ItemLink to="/about#top">
           <HeaderSubItem>Our Story</HeaderSubItem>
         </ItemLink>
         <ItemLink to="/about#mission">
