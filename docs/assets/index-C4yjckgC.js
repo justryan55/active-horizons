@@ -194,7 +194,6 @@ Error generating stack: `+o.message+`
   height: 100%;
   min-height: 100vh;
   background-color: #81bbc5;
-
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -221,7 +220,6 @@ Error generating stack: `+o.message+`
   text-align: center;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.4);
   transition: transform 0.3s, box-shadow 0.3s;
-
   &:hover {
     transform: scale(1.05);
     box-shadow: 0 8px 16px rgba(0, 0, 0, 0.6);
@@ -285,9 +283,12 @@ Error generating stack: `+o.message+`
   &:hover {
     background-color: #2e7d32;
   }
-`;function cx(){const[e,t]=q.useState(!0);return q.useEffect(()=>{const n=()=>{window.innerWidth<=1050?t(!1):t(!0)};return n(),window.addEventListener("resize",n),()=>window.removeEventListener("resize",n)},[]),M.jsxs(M.Fragment,{children:[M.jsxs(rx,{children:[M.jsx(ol,{id:"benefits",children:"The Benefits"}),M.jsx(nx,{children:M.jsxs(tx,{children:[M.jsx(En,{img:"time",alt:"time",title:"Save Time on Travel",description:"Skip the commute and enjoy the convenience of accessing high-quality physiotherapy from the comfort of your home.",isWhite:!0}),M.jsx(En,{img:"dollar",alt:"dollar",title:"Cut Down on Costs",description:"Eliminate travel expenses, and benefit from practitioners who don’t need to charge for travel—allowing you to allocate more funds directly to your therapy."}),M.jsx(En,{img:"calendar-month",alt:"calendar",title:"Flexible Scheduling",description:"Online physiotherapy offers the ultimate flexibility, making it easier to fit sessions into your busy life, whether you're balancing work, family, or other commitments.",isWhite:!0}),M.jsx(En,{img:"remote-care",alt:"remote",title:"Accessible for Remote and Rural Areas",description:"Reach top-tier physiotherapy services no matter where you live. Online sessions ensure that even participants in the most remote or rural areas can receive the care they need."}),M.jsx(En,{img:"waitlist",alt:"waitlist",title:"Bypass Long Waitlists",description:"No more waiting weeks or even months to see a local physiotherapist. Online services significantly reduce wait times, allowing you to start your therapy sooner."}),M.jsx(En,{img:"home",alt:"home",title:"Comfortable Environment",description:"Conduct your physiotherapy sessions in the comfort of your own home, which can help you feel more relaxed and open to the treatment process.",isWhite:!0}),M.jsx(En,{img:"exercise",alt:"exercise",title:"Real-Time Feedback",description:"Get immediate feedback and adjustments from your physiotherapist, ensuring that you are performing exercises correctly and effectively in your natural environment."}),M.jsx(En,{img:"bandaid",alt:"bandaid",title:"Continuity of Care",description:"Maintain consistent care even when circumstances prevent in-person visits, such as during travel or in times of illness.",isWhite:!0})]})})]}),M.jsxs(ix,{children:[M.jsx(ol,{id:"process",children:"The Process"}),M.jsxs(ox,{children:[M.jsx(vi,{children:"Complete the online referral form"}),M.jsx(zo,{children:M.jsx(Lo,{size:50})}),M.jsx(vi,{children:"You will then be contacted by your practitioner within 24-48 hours to schedule in your first appointment"}),M.jsx(zo,{children:M.jsx(Lo,{size:50})}),M.jsx(vi,{children:"The first appointment will include goal setting and the initial assessment. Following this, a discussion of suitable management plans will take place and the most appropriate plan will be scheduled in"}),M.jsx(zo,{children:M.jsx(Lo,{size:50})}),M.jsx(vi,{children:"Online physiotherapy will be completed as per the management plan"}),M.jsx(zo,{children:M.jsx(Lo,{size:50})}),M.jsx(vi,{children:"Regular monitoring will take place to ensure that you are making progress towards your goals"})]})]}),M.jsxs(ax,{children:[M.jsx(ol,{id:"pricing",children:"The Pricing"}),M.jsxs(sx,{isDesktop:e,children:[M.jsx(Zd,{children:M.jsx(Jw,{})}),M.jsx(al,{children:"At Active Horizons Health Group, we are committed to providing transparent and fair pricing for all our services. We adhere to the NDIS pricing arrangements and price limits to ensure that our clients receive the highest standard of care without unexpected costs. We are pleased to advise that our services are 100% funded by the NDIS, meaning there are no out-of-pocket costs for NDIS participants."}),M.jsx(lx,{children:M.jsx(Zw,{})}),M.jsx(al,{children:"We bill for the time directly spent with the client and for the indirect time spent on tasks such as note taking, creating materials, writing reports, and communicating with key workers, and others involved."}),M.jsx(Zd,{children:M.jsx(ex,{})}),M.jsx(al,{children:"Please note that we only accept NDIS participants who are plan-managed or self-managed."})]}),M.jsx(ux,{children:"START TODAY"})]})]})}const fx=K.section`
+`;function cx(){const[e,t]=q.useState(!0);return q.useEffect(()=>{const n=()=>{window.innerWidth<=1050?t(!1):t(!0)};return n(),window.addEventListener("resize",n),()=>window.removeEventListener("resize",n)},[]),M.jsxs(M.Fragment,{children:[M.jsxs(rx,{children:[M.jsx(ol,{id:"benefits",children:"The Benefits"}),M.jsx(nx,{children:M.jsxs(tx,{children:[M.jsx(En,{img:"time",alt:"time",title:"Save Time on Travel",description:"Skip the commute and enjoy the convenience of accessing high-quality physiotherapy from the comfort of your home.",isWhite:!0}),M.jsx(En,{img:"dollar",alt:"dollar",title:"Cut Down on Costs",description:"Eliminate travel expenses, and benefit from practitioners who don’t need to charge for travel—allowing you to allocate more funds directly to your therapy."}),M.jsx(En,{img:"calendar-month",alt:"calendar",title:"Flexible Scheduling",description:"Online physiotherapy offers the ultimate flexibility, making it easier to fit sessions into your busy life, whether you're balancing work, family, or other commitments.",isWhite:!0}),M.jsx(En,{img:"remote-care",alt:"remote",title:"Accessible for Remote and Rural Areas",description:"Reach top-tier physiotherapy services no matter where you live. Online sessions ensure that even participants in the most remote or rural areas can receive the care they need."}),M.jsx(En,{img:"waitlist",alt:"waitlist",title:"Bypass Long Waitlists",description:"No more waiting weeks or even months to see a local physiotherapist. Online services significantly reduce wait times, allowing you to start your therapy sooner."}),M.jsx(En,{img:"home",alt:"home",title:"Comfortable Environment",description:"Conduct your physiotherapy sessions in the comfort of your own home, which can help you feel more relaxed and open to the treatment process.",isWhite:!0}),M.jsx(En,{img:"exercise",alt:"exercise",title:"Real-Time Feedback",description:"Get immediate feedback and adjustments from your physiotherapist, ensuring that you are performing exercises correctly and effectively in your natural environment."}),M.jsx(En,{img:"bandaid",alt:"bandaid",title:"Continuity of Care",description:"Maintain consistent care even when circumstances prevent in-person visits, such as during travel or in times of illness.",isWhite:!0})]})})]}),M.jsxs(ix,{children:[M.jsx(ol,{id:"process",children:"The Process"}),M.jsxs(ox,{children:[M.jsx(vi,{children:"Complete the online referral form"}),M.jsx(zo,{children:M.jsx(Lo,{size:50})}),M.jsx(vi,{children:"You will then be contacted by your practitioner within 24-48 hours to schedule in your first appointment"}),M.jsx(zo,{children:M.jsx(Lo,{size:50})}),M.jsx(vi,{children:"The first appointment will include goal setting and the initial assessment. Following this, a discussion of suitable management plans will take place and the most appropriate plan will be scheduled in"}),M.jsx(zo,{children:M.jsx(Lo,{size:50})}),M.jsx(vi,{children:"Online physiotherapy will be completed as per the management plan"}),M.jsx(zo,{children:M.jsx(Lo,{size:50})}),M.jsx(vi,{children:"Regular monitoring will take place to ensure that you are making progress towards your goals"})]})]}),M.jsxs(ax,{children:[M.jsx(ol,{id:"pricing",children:"The Pricing"}),M.jsxs(sx,{isDesktop:e,children:[M.jsx(Zd,{children:M.jsx(Jw,{})}),M.jsx(al,{children:"At Active Horizons Health Group, we are committed to providing transparent and fair pricing for all our services. We adhere to the NDIS pricing arrangements and price limits to ensure that our clients receive the highest standard of care without unexpected costs. We are pleased to advise that our services are 100% funded by the NDIS, meaning there are no out-of-pocket costs for NDIS participants."}),M.jsx(lx,{children:M.jsx(Zw,{})}),M.jsx(al,{children:"We bill for the time directly spent with the client and for the indirect time spent on tasks such as note taking, creating materials, writing reports, and communicating with key workers, and others involved."}),M.jsx(Zd,{children:M.jsx(ex,{})}),M.jsx(al,{children:"Please note that we only accept NDIS participants who are plan-managed or self-managed. We welcome adults nationwide across Australia and are only accepting children and adolescents residing in Victoria at this stage."})]}),M.jsx(ux,{children:"START TODAY"})]})]})}const fx=K.section`
   width: 100%;
-  height: 15rem;
+  height: 100%;
+  padding-top: 50px;
+  padding-bottom: 50px;
+
   background-color: white;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.075);
   border-top: 1px solid #e0e0e0;
@@ -301,10 +302,18 @@ Error generating stack: `+o.message+`
     text-decoration: none;
     color: black;
   }
+
+  @media screen and (max-width: 640px) {
+    grid-template-columns: repeat(1, 1fr);
+  }
 `,dx=K.img`
   height: 70px;
 `,sl=K.div`
   font-size: 1.25rem;
+
+  @media screen and (max-width: 640px) {
+    padding-top: 50px;
+  }
 `,ln=K.div`
   display: flex;
   align-items: center;
@@ -540,7 +549,6 @@ Error generating stack: `+o.message+`
   justify-content: center;
   align-items: center;
   background-color: white;
-
   width: ${e=>e.isDesktop?"50%":"100%"};
   z-index: 1000;
   min-height: 100vh;
