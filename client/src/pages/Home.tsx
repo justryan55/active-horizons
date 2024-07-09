@@ -61,7 +61,6 @@ const ButtonBlue = styled.button`
   position: relative;
   overflow: hidden;
   background-color: rgb(129, 187, 197);
-  background-color: ;
   color: #fff;
   text-transform: uppercase;
   box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);

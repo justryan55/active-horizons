@@ -111,17 +111,6 @@ const NavLinkMobile = styled(Link)`
   }
 `;
 
-const NavLinkLogo = styled(Link)`
-  font-size: 1.25rem;
-  text-decoration: none;
-  color: inherit;
-  display: block;
-  margin: 1.5rem 0;
-  padding: 0.5rem 1.5rem;
-  border-bottom: 1px black solid;
-  width: calc(100% - 2rem);
-`;
-
 const Button = styled.button`
   font-size: 1.2rem;
   font-weight: 600;
@@ -176,7 +165,11 @@ const MobileButton = styled.button`
   }
 `;
 
-const MenuContainer = styled.div`
+interface MenuContainerProps {
+  isOpen: boolean;
+}
+
+const MenuContainer = styled.div<MenuContainerProps>`
   position: absolute;
   top: 100%;
   background-color: white;
@@ -185,7 +178,7 @@ const MenuContainer = styled.div`
   display: ${(props) => (props.isOpen ? "block" : "none")};
 `;
 
-const MenuItem = styled(Link)`
+const MenuItem = styled.div`
   display: block;
   padding: 0.75rem 1.5rem;
   color: black;
@@ -207,7 +200,7 @@ export const NavigationBar = () => {
   const [showBurgerMenu, setShowBurgerMenu] = useState(false);
   const aboutMenuRef = useRef(null);
   const processMenuRef = useRef(null);
-  const timeoutRef = useRef(null);
+  const timeoutRef = useRef<NodeJS.Timeout | null>(null);
 
   useEffect(() => {
     const handleResize = () => {
@@ -378,7 +371,6 @@ export const NavigationBar = () => {
               </div>
             )}
           </div>
-          {/* <NavLinkMobile to="/blog">Blog</NavLinkMobile> */}
           <NavLinkMobile to="/contact">Contact</NavLinkMobile>
 
           <MobileButton>Start today</MobileButton>
@@ -387,8 +379,6 @@ export const NavigationBar = () => {
         <Nav>
           <NavLink to="/">
             <img src="/images/logo-1.png" alt="logo" />
-
-            {/* <NavDiv>Active Horizons</NavDiv> */}
           </NavLink>
           <NavDiv>
             <div>
@@ -493,7 +483,6 @@ export const NavigationBar = () => {
                 </ScrollLink>
               </MenuContainer>
             </div>
-            {/* <NavLink to="/blog">Blog</NavLink> */}
             <NavLink to="/contact">Contact</NavLink>
 
             <Button>Start today</Button>
