@@ -79,7 +79,6 @@ const DivStoryContainer = styled.div<ContainerProps>`
   justify-content: center;
   align-items: center;
   background-color: white;
-
   width: ${(props) => (props.isDesktop ? "50%" : "100%")};
   z-index: 1000;
   min-height: 100vh;
