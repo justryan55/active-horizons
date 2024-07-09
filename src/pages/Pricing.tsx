@@ -136,7 +136,9 @@ export default function Pricing() {
 
           <PricingContent>
             Please note that we only accept NDIS participants who are
-            plan-managed or self-managed.
+            plan-managed or self-managed. We welcome adults nationwide across
+            Australia and are only accepting children and adolescents residing
+            in Victoria at this stage.
           </PricingContent>
         </div>
       </DivBackground>
