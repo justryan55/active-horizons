@@ -2,11 +2,6 @@ import styled, { keyframes } from "styled-components";
 
 import { useState } from "react";
 
-interface PolicyViewerProps {
-  title: string;
-  description: string;
-}
-
 const Div = styled.div`
   display: flex;
   flex-direction: column;
@@ -84,10 +79,7 @@ const DescriptionText = styled.pre`
   }
 `;
 
-export default function PolicyViewer({
-  title,
-  description,
-}: PolicyViewerProps) {
+export default function PolicyViewer({ title, description }) {
   const [isOpen, setIsOpen] = useState(false);
 
   const handleClick = () => {
@@ -104,7 +96,7 @@ export default function PolicyViewer({
         <p>{title}</p>
       </Div>
       {isOpen && (
-        <ModalOverlay onClick={closeModal}>
+        <ModalOverlay isOpen={isOpen} onClick={closeModal}>
           <Modal>
             <ModalButton onClick={closeModal}>X</ModalButton>
 

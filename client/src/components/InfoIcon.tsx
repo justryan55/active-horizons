@@ -1,14 +1,6 @@
 import styled, { keyframes } from "styled-components";
 
-import { useState } from "react";
-
-interface InfoIconProps {
-  img: string;
-  alt: string;
-  title: string;
-  description: string;
-  isWhite?: boolean;
-}
+import { useEffect, useState } from "react";
 
 const shakeAnimation = keyframes`
   0% { transform: rotate(0deg); }
@@ -19,18 +11,16 @@ const shakeAnimation = keyframes`
   100% { transform: rotate(0deg); }
 `;
 
-interface DivProps {
-  isWhite?: boolean;
-}
-
-const Div = styled.div<DivProps>`
+const Div = styled.div`
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
   width: 200px;
   height: 200px;
+  /* border-radius: 10px; */
   background-color: ${(props) => (props.isWhite ? "white" : "#4caf50")};
+  /* box-shadow: 0 4px 8px rgba(0, 0, 0, 0.075); */
   padding: 10px;
   transition: transform 0.3s ease, background-color 0.3s ease;
   margin: 5px;
@@ -115,13 +105,7 @@ const ModalButton = styled.button`
   font-size: 20px;
 `;
 
-export default function InfoIcon({
-  img,
-  alt,
-  title,
-  description,
-  isWhite,
-}: InfoIconProps) {
+export default function InfoIcon({ img, alt, title, description, isWhite }) {
   const [isOpen, setIsOpen] = useState(false);
 
   const handleClick = () => {
@@ -139,7 +123,7 @@ export default function InfoIcon({
         <p>{title}</p>
       </Div>
       {isOpen && (
-        <ModalOverlay onClick={closeModal}>
+        <ModalOverlay isOpen={isOpen} onClick={closeModal}>
           <Modal>
             <ModalButton onClick={closeModal}>X</ModalButton>
             <img src={`/images/${img}.svg`} alt={alt} />

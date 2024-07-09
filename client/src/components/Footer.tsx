@@ -52,16 +52,21 @@ export const Footer = () => {
     <FooterContainer>
       <Header>
         <Logo src="images/logo-1.png" alt="logo" />
-        <HeaderSubItem>
+        {/* <HeaderSubItem>
           <img src="/images/instagram.svg" alt="instagram" />
           <img src="/images/facebook.svg" alt="facebook" />
-        </HeaderSubItem>
+        </HeaderSubItem> */}
         <HeaderSubItem>
           <img src="/images/mail.svg" alt="email" />
           activehorizonshg@gmail.com
         </HeaderSubItem>
       </Header>
 
+      {/* <Header>
+        Support
+        <HeaderSubItem>FAQs</HeaderSubItem>
+        <HeaderSubItem>Feedback</HeaderSubItem>
+      </Header> */}
       <Header>
         <ItemLink to="/policies">Policies</ItemLink>
         <a href="/files/privacy-policy.pdf" download>
@@ -90,6 +95,9 @@ export const Footer = () => {
           <HeaderSubItem>Our Team</HeaderSubItem>
         </ItemLink>
       </Header>
+      {/* <Header>
+        Resources <HeaderSubItem>Blog</HeaderSubItem>
+      </Header> */}
     </FooterContainer>
   );
 };

@@ -1,4 +1,7 @@
 import { Route, BrowserRouter as Router, Routes } from "react-router-dom";
+import App from "../App";
+import Pricing from "../pages/Pricing";
+import Blog from "../pages/Blog";
 import Physiotherapy from "../pages/Physiotherapy";
 import Layout from "../components/Layout";
 import About from "../pages/About";
@@ -23,6 +26,22 @@ const AppRouter = () => {
           element={
             <Layout>
               <About />
+            </Layout>
+          }
+        />
+        {/* <Route
+          path="/pricing"
+          element={
+            <Layout>
+              <Pricing />
+            </Layout>
+          }
+        /> */}
+        <Route
+          path="/blog"
+          element={
+            <Layout>
+              <Blog />
             </Layout>
           }
         />

@@ -4,19 +4,29 @@ import Carousel from "react-multi-carousel";
 import "react-multi-carousel/lib/styles.css";
 import { useEffect, useState } from "react";
 
-interface ContainerProps {
-  isDesktop: boolean;
-}
-
 const DivStory = styled.div`
   height: 100%;
   min-height: 100vh;
   background-color: #efefef;
+  /* padding: 40px 20px; */
   display: flex;
   flex-direction: column;
   align-items: flex-start;
   justify-content: center;
   text-align: center;
+  /* background: url("/images/hero-image.jpeg") center/contain repeat, #efefef;
+
+  ::before {
+    content: "";
+    position: absolute;
+    top: 0px;
+    left: 0;
+    width: 100%;
+    min-height: 115vh;
+    height: 100%;
+    background-color: rgba(239, 239, 239, 0.075);
+    z-index: -1;
+  } */
 
   h1 {
     font-size: 2.5rem;
@@ -51,7 +61,9 @@ const DivStory = styled.div`
 const DivMission = styled.div`
   height: 100%;
   min-height: 100vh;
-
+  /* background: url("/images/heartbeat.svg") center/cover no-repeat,
+    rgba(129, 187, 197, 1);
+  background-size: 125%; */
   background-color: rgb(129, 187, 197, 1);
 
   display: flex;
@@ -69,16 +81,19 @@ const DivMission = styled.div`
     max-width: 90%;
     font-size: 1.4rem;
     line-height: 1.6;
+    /* margin-bottom: 15rem; */
     z-index: 1000;
   }
 `;
 
-const DivStoryContainer = styled.div<ContainerProps>`
+const DivStoryContainer = styled.div`
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
   background-color: white;
+  /* box-shadow: 0 4px 8px rgba(0, 0, 0, 0.4); */
+  /* padding: 20px 0px; */
 
   width: ${(props) => (props.isDesktop ? "50%" : "100%")};
   z-index: 1000;
@@ -86,7 +101,7 @@ const DivStoryContainer = styled.div<ContainerProps>`
   height: 100%;
 `;
 
-const DivValues = styled.div<ContainerProps>`
+const DivValues = styled.div`
   height: 100%;
   min-height: 100vh;
   background-color: #efefef;
@@ -111,14 +126,18 @@ const DivValues = styled.div<ContainerProps>`
     margin: 0 auto 20px;
     z-index: 1000;
   }
+  /* background: url("/images/heartbeat.svg") center/cover no-repeat, #efefef;
+  background-size: 130%; */
 `;
 
-const DivValuesContainer = styled.div<ContainerProps>`
+const DivValuesContainer = styled.div`
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
   background-color: white;
+  /* box-shadow: 0 4px 8px rgba(0, 0, 0, 0.4); */
+  /* padding: 20px 0px; */
 
   min-width: ${(props) => (props.isDesktop ? "50%" : "100%")};
   z-index: 1000;
@@ -126,13 +145,15 @@ const DivValuesContainer = styled.div<ContainerProps>`
   height: 100%;
 `;
 
-const DivMissionContainer = styled.div<ContainerProps>`
+const DivMissionContainer = styled.div`
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
   background-color: ${(props) =>
     props.isDesktop ? "white" : "rgb(129, 187, 197, 1)"};
+  /* box-shadow: 0 4px 8px rgba(0, 0, 0, 0.4); */
+  /* padding: 20px 0px; */
 
   width: ${(props) => (props.isDesktop ? "50%" : "100%")};
   z-index: 1000;
@@ -140,7 +161,7 @@ const DivMissionContainer = styled.div<ContainerProps>`
   height: 100%;
 `;
 
-const DivTeamRight = styled.div<ContainerProps>`
+const DivTeamRight = styled.div`
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -150,12 +171,13 @@ const DivTeamRight = styled.div<ContainerProps>`
 
   width: ${(props) => (props.isDesktop ? "50%" : "100%")};
   z-index: 1000;
+  /* border-radius: 50px; */
 
   height: 100%;
   min-height: 100vh;
 `;
 
-const DivTeam = styled.div<ContainerProps>`
+const DivTeam = styled.div`
   height: 100%;
   min-height: 100vh;
   background-color: rgb(129, 187, 197);
@@ -167,12 +189,14 @@ const DivTeam = styled.div<ContainerProps>`
   text-align: center;
 `;
 
-const DivTeamContainer = styled.div<ContainerProps>`
+const DivTeamContainer = styled.div`
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
   background-color: rgb(129, 187, 197);
+  /* box-shadow: 0 4px 8px rgba(0, 0, 0, 0.4); */
+  /* padding: 20px 0px; */
 
   width: 50%;
   z-index: 1000;
@@ -219,7 +243,7 @@ const Text = styled.p`
   margin-bottom: 20px;
 `;
 
-const CarouselFlexContainer = styled.div<ContainerProps>`
+const CarouselFlexContainer = styled.div`
   display: flex;
   flex-direction: row;
   justify-content: center;
@@ -229,12 +253,18 @@ const CarouselFlexContainer = styled.div<ContainerProps>`
   width: ${(props) => (props.isDesktop ? "50%" : "100%")};
 `;
 
+const BackgroundImage = styled.img`
+  position: absolute;
+  width: 115%;
+  opacity: 100%;
+`;
+
 const CarouselContainer = styled.div`
   width: 100%;
 `;
 
 export default function About() {
-  const [isDesktop, setIsDesktop] = useState(true);
+  const [isDesktop, setIsDesktop] = useState(null);
   const responsive = {
     desktop: {
       breakpoint: { max: 3000, min: 1500 },
@@ -284,9 +314,13 @@ export default function About() {
             receive the physiotherapy care they need, wherever they are.
           </p>
         </DivStoryContainer>
+        {/* <BackgroundImage src="images/vital.svg" /> */}
       </DivStory>
       <DivMission>
         <DivMissionContainer isDesktop={isDesktop}>
+          {/* {/* <ImageOne src="images/hero-image-1.jpeg"></ImageOne>
+          <ImageTwo src="images/hero-image-2.jpeg"></ImageTwo> */}
+
           <h1 id="mission">Our Mission</h1>
           <p>
             Our mission at Active Horizons Health Group is to deliver
@@ -296,6 +330,7 @@ export default function About() {
             use of telehealth solutions.
           </p>
         </DivMissionContainer>
+        {/* <BackgroundImage src="images/vital.svg" /> */}
       </DivMission>
 
       <DivValues isDesktop={isDesktop}>
@@ -375,7 +410,7 @@ export default function About() {
         </CarouselFlexContainer>
       </DivValues>
       <DivTeam id="team" isDesktop={isDesktop}>
-        <DivTeamContainer isDesktop={isDesktop}>
+        <DivTeamContainer>
           <Title>Our Team</Title>
           <ProfileImage src="/images/profile.jpeg" alt="profile" />
           <Name>Ryan Irani</Name>
@@ -424,3 +459,12 @@ export default function About() {
     </>
   );
 }
+
+// <ValueIcon
+// img="Integrity"
+// alt="Integrity"
+// title="Lifelong Learning"
+// description={
+//   "We are committed to continuous professional development. Our team regularly updates their skills and knowledge to provide the most effective and current treatments available."
+// }
+// />

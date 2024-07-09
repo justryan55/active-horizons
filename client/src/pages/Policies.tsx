@@ -20,11 +20,28 @@ const DivBackground = styled.div`
 
   width: 40%;
   z-index: 1000;
+  /* border-radius: 30px; */
 `;
 const Title = styled.h1`
   font-size: 2.5rem;
   margin-bottom: 30px;
   color: black;
+`;
+
+const Text = styled.p`
+  max-width: 100%;
+  font-size: 1.2rem;
+  line-height: 1.6;
+  color: black;
+  margin-bottom: 20px;
+`;
+
+const SubText = styled.p`
+  max-width: 100%;
+  font-size: 1.2rem;
+  line-height: 1.6;
+  color: black;
+  margin-bottom: 20px;
 `;
 
 const FlexDiv = styled.div`

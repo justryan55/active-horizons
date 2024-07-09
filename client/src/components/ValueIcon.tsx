@@ -1,12 +1,5 @@
 import styled from "styled-components";
 
-interface ValueIconProps {
-  img: string;
-  alt: string;
-  title: string;
-  description: string;
-}
-
 const Container = styled.div`
   background-color: #ffffff;
   border-radius: 10px;
@@ -50,12 +43,7 @@ const Description = styled.p`
   z-index: 1000;
 `;
 
-export default function ValueIcon({
-  img,
-  alt,
-  title,
-  description,
-}: ValueIconProps) {
+export default function ValueIcon({ img, alt, title, description }) {
   return (
     <Container>
       <Icon src={`/images/${img}.svg`} alt={alt} />
