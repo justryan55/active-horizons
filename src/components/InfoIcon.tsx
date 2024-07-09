@@ -102,6 +102,11 @@ const Modal = styled.div`
   img {
     height: 75px;
   }
+
+  @media screen and (max-width: 640px) {
+    max-width: 60%;
+    padding: 40px;
+  }
 `;
 
 const ModalButton = styled.button`

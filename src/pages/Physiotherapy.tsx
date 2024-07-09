@@ -121,6 +121,10 @@ const PricingContent = styled.p`
   line-height: 1.6;
   margin: 0 auto 20px;
   width: 80%;
+
+  @media screen and (max-width: 640px) {
+    width: 100%;
+  }
 `;
 
 const DivBackground = styled.div<DivContainerProps>`

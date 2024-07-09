@@ -183,7 +183,12 @@ const Title = styled.h1`
   font-size: 2.5rem;
   margin-bottom: 20px;
   color: black;
+
+  @media screen and (max-width: 640px) {
+    font-size: 2.17rem;
+  }
 `;
+
 const ProfileImage = styled.img`
   height: 300px;
   width: 300px;
@@ -193,6 +198,11 @@ const ProfileImage = styled.img`
 
   &:hover {
     transform: scale(1.05);
+  }
+
+  @media screen and (max-width: 640px) {
+    height: 250px;
+    width: 250px;
   }
 `;
 
@@ -315,7 +325,7 @@ export default function About() {
               deviceType={"tablet"}
               infinite={true}
               autoPlay={true}
-              autoPlaySpeed={5000}
+              autoPlaySpeed={3000}
               keyBoardControl={true}
               customTransition="all .5"
               transitionDuration={500}
