@@ -1,5 +1,6 @@
 import styled from "styled-components";
 import { Link } from "react-router-dom";
+import { FaFacebook, FaLinkedin } from "react-icons/fa6";
 
 const FooterContainer = styled.section`
   width: 100%;
@@ -64,12 +65,27 @@ export const Footer = () => {
       <Header>
         <Logo src="images/logo-1.png" alt="logo" />
         <HeaderSubItem>
-          <img src="/images/instagram.svg" alt="instagram" />
-          <img src="/images/facebook.svg" alt="facebook" />
-        </HeaderSubItem>
-        <HeaderSubItem>
           <img src="/images/mail.svg" alt="email" />
           activehorizonshg@gmail.com
+        </HeaderSubItem>
+
+        <HeaderSubItem>
+          <a
+            href="https://www.linkedin.com/company/active-horizons-health-group/"
+            target="_blank"
+          >
+            <FaLinkedin size={25} color="#4caf50" />
+          </a>
+          <a
+            href="https://www.facebook.com/people/Active-Horizons-Health-Group/61562071659403/"
+            target="_blank"
+          >
+            <FaFacebook
+              size={25}
+              style={{ paddingLeft: "10px" }}
+              color="#4caf50"
+            />
+          </a>
         </HeaderSubItem>
       </Header>
 
