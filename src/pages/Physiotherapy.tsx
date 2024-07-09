@@ -348,7 +348,12 @@ export default function Physiotherapy() {
             in Victoria at this stage.
           </PricingContent>
         </DivBackground>
-        <CTAButton>START TODAY</CTAButton>
+        <a
+          href="https://clientportal.powerdiary.com/clientportal/activehorizonshealthgroup"
+          target="_blank"
+        >
+          <CTAButton>START TODAY</CTAButton>
+        </a>
       </PricingContainer>
     </>
   );

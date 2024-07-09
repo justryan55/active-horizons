@@ -485,7 +485,12 @@ export const NavigationBar = () => {
             </div>
             <NavLink to="/contact">Contact</NavLink>
 
-            <Button>Start today</Button>
+            <a
+              href="https://clientportal.powerdiary.com/clientportal/activehorizonshealthgroup"
+              target="_blank"
+            >
+              <Button>Start today</Button>
+            </a>
           </NavDiv>
         </Nav>
       )}

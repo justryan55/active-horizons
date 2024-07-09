@@ -94,7 +94,12 @@ export default function Home() {
         <Link to="/about">
           <ButtonBlue>Learn More</ButtonBlue>
         </Link>
-        <ButtonGreen>Start Today</ButtonGreen>
+        <a
+          href="https://clientportal.powerdiary.com/clientportal/activehorizonshealthgroup"
+          target="_blank"
+        >
+          <ButtonGreen>Start Today</ButtonGreen>
+        </a>
       </ButtonDiv>
     </DivContainer>
   );
