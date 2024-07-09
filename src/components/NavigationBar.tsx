@@ -373,7 +373,12 @@ export const NavigationBar = () => {
           </div>
           <NavLinkMobile to="/contact">Contact</NavLinkMobile>
 
-          <MobileButton>Start today</MobileButton>
+          <a
+            href="https://clientportal.powerdiary.com/clientportal/activehorizonshealthgroup"
+            target="_blank"
+          >
+            <MobileButton>Start today</MobileButton>
+          </a>
         </BurgerMenu>
       ) : (
         <Nav>
