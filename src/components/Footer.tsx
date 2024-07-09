@@ -3,7 +3,10 @@ import { Link } from "react-router-dom";
 
 const FooterContainer = styled.section`
   width: 100%;
-  height: 15rem;
+  height: 100%;
+  padding-top: 50px;
+  padding-bottom: 50px;
+
   background-color: white;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.075);
   border-top: 1px solid #e0e0e0;
@@ -17,6 +20,10 @@ const FooterContainer = styled.section`
     text-decoration: none;
     color: black;
   }
+
+  @media screen and (max-width: 640px) {
+    grid-template-columns: repeat(1, 1fr);
+  }
 `;
 
 const Logo = styled.img`
@@ -25,6 +32,10 @@ const Logo = styled.img`
 
 const Header = styled.div`
   font-size: 1.25rem;
+
+  @media screen and (max-width: 640px) {
+    padding-top: 50px;
+  }
 `;
 
 const HeaderSubItem = styled.div`
