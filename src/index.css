@@ -20,3 +20,11 @@ body, html {
 p {
   margin: 0;
 }
+
+@media screen and (max-width: 640px)
+{
+    body, html{
+        width: 100vw;
+        overflow-x: hidden;
+    }
+}
