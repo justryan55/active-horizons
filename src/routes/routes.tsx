@@ -1,4 +1,4 @@
-import { Route, BrowserRouter as Router, Routes } from "react-router-dom";
+import { Route, HashRouter as Router, Routes } from "react-router-dom";
 import Physiotherapy from "../pages/Physiotherapy";
 import Layout from "../components/Layout";
 import About from "../pages/About";
