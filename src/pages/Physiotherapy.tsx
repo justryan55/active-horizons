@@ -277,15 +277,17 @@ export default function Physiotherapy() {
 
         <DivGrid>
           <ProcessDivContainer>
-            Complete the online referral form
+            Click 'Start Today' and book an appointment online via the client
+            portal.
           </ProcessDivContainer>
           <ArrowDiv>
             <FaAngleDown size={50} />
           </ArrowDiv>
 
           <ProcessDivContainer>
-            You will then be contacted by your practitioner within 24-48 hours
-            to schedule in your first appointment
+            You will receive an email with two forms to complete prior to the
+            first appointment. This email will also contain the telehealth link
+            for the appointment.
           </ProcessDivContainer>
           <ArrowDiv>
             <FaAngleDown size={50} />
